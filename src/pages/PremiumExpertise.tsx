@@ -5,6 +5,14 @@ import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Star, Calendar, MessageSquare, Award, Languages, Sparkles } from "lucide-react";
+import advisorSophie from "@/assets/advisor-sophie.jpg";
+import advisorMarc from "@/assets/advisor-marc.jpg";
+import expertPierre from "@/assets/expert-pierre.jpg";
+import expertClaire from "@/assets/expert-claire.jpg";
+import expertThomas from "@/assets/expert-thomas.jpg";
+import expertEmilie from "@/assets/expert-emilie.jpg";
+import expertLaurent from "@/assets/expert-laurent.jpg";
+import expertNathalie from "@/assets/expert-nathalie.jpg";
 
 const myAdvisors = [
   {
@@ -15,7 +23,7 @@ const myAdvisors = [
     experience: "15 ans",
     rating: 4.9,
     languages: ["Français", "Anglais"],
-    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Sophie",
+    avatar: advisorSophie,
     description: "Experte en optimisation de portefeuille et gestion de patrimoine pour clients privés.",
     certifications: ["CFA", "CFP"],
     isMainAdvisor: true,
@@ -28,7 +36,7 @@ const myAdvisors = [
     experience: "10 ans",
     rating: 4.8,
     languages: ["Français", "Anglais", "Allemand"],
-    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Marc",
+    avatar: advisorMarc,
     description: "Spécialiste des marchés émergents et de la diversification géographique.",
     certifications: ["CFA"],
     isMainAdvisor: false,
@@ -44,7 +52,7 @@ const specialistExperts = [
     experience: "18 ans",
     rating: 5.0,
     languages: ["Français", "Anglais"],
-    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Pierre",
+    avatar: expertPierre,
     description: "Spécialiste du capital-investissement et des actifs alternatifs pour clients fortunés.",
     certifications: ["CAIA", "CFA"],
     domains: ["Private Equity", "Venture Capital", "Infrastructure"],
@@ -57,7 +65,7 @@ const specialistExperts = [
     experience: "12 ans",
     rating: 4.9,
     languages: ["Français", "Anglais", "Espagnol"],
-    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Claire",
+    avatar: expertClaire,
     description: "Conseillère en investissement durable et finance à impact social.",
     certifications: ["CFA ESG", "FSA"],
     domains: ["ESG", "Impact Investing", "Green Bonds"],
@@ -70,7 +78,7 @@ const specialistExperts = [
     experience: "20 ans",
     rating: 4.8,
     languages: ["Français"],
-    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Thomas",
+    avatar: expertThomas,
     description: "Spécialiste de l'immobilier d'investissement et des SCPI premium.",
     certifications: ["MRICS", "Expert Immobilier"],
     domains: ["Immobilier", "SCPI", "OPCI"],
@@ -79,11 +87,11 @@ const specialistExperts = [
     id: 6,
     name: "Émilie Dubois",
     title: "Experte Cryptoactifs",
-    specialty: "Alternatif",
+    specialty: "Crypto",
     experience: "8 ans",
     rating: 4.7,
     languages: ["Français", "Anglais"],
-    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Emilie",
+    avatar: expertEmilie,
     description: "Conseillère spécialisée en actifs numériques et blockchain pour patrimoine.",
     certifications: ["CBFA", "Blockchain Expert"],
     domains: ["Cryptomonnaies", "DeFi", "NFTs"],
@@ -92,11 +100,11 @@ const specialistExperts = [
     id: 7,
     name: "Laurent Mercier",
     title: "Expert Art & Collection",
-    specialty: "Alternatif",
+    specialty: "Art",
     experience: "25 ans",
     rating: 5.0,
     languages: ["Français", "Anglais", "Italien"],
-    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Laurent",
+    avatar: expertLaurent,
     description: "Spécialiste des investissements dans l'art, le vin et les objets de collection.",
     certifications: ["Expert Christie's", "CAA"],
     domains: ["Art Contemporain", "Vins & Spiritueux", "Montres"],
@@ -109,7 +117,7 @@ const specialistExperts = [
     experience: "16 ans",
     rating: 4.9,
     languages: ["Français", "Anglais"],
-    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Nathalie",
+    avatar: expertNathalie,
     description: "Conseillère en optimisation fiscale et structuration patrimoniale.",
     certifications: ["Expert-Comptable", "Avocat Fiscaliste"],
     domains: ["Fiscalité", "Transmission", "Holding"],
@@ -220,12 +228,14 @@ export default function PremiumExpertise() {
           </CardHeader>
           <CardContent>
             <Tabs defaultValue="all" className="space-y-6">
-              <TabsList className="grid w-full max-w-3xl grid-cols-5">
+              <TabsList className="grid w-full grid-cols-4 lg:grid-cols-7">
                 <TabsTrigger value="all">Tous</TabsTrigger>
                 <TabsTrigger value="allocation">Allocation</TabsTrigger>
                 <TabsTrigger value="alternatif">Alternatif</TabsTrigger>
                 <TabsTrigger value="esg">ESG</TabsTrigger>
                 <TabsTrigger value="immobilier">Immobilier</TabsTrigger>
+                <TabsTrigger value="crypto">Crypto</TabsTrigger>
+                <TabsTrigger value="art">Art</TabsTrigger>
               </TabsList>
 
               <TabsContent value="all" className="space-y-4">
@@ -376,6 +386,146 @@ export default function PremiumExpertise() {
                           <p className="text-sm text-muted-foreground mb-2">{expert.title}</p>
                           <p className="text-sm text-muted-foreground mb-3">{expert.description}</p>
                           <Button>Consulter</Button>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </TabsContent>
+
+              <TabsContent value="crypto" className="space-y-4">
+                {filteredBySpecialty("Crypto").map((expert) => (
+                  <Card key={expert.id} className="shadow-card hover:shadow-lg transition-all">
+                    <CardContent className="pt-6">
+                      <div className="flex flex-col md:flex-row md:items-start space-y-4 md:space-y-0 md:space-x-4">
+                        <Avatar className="h-16 w-16 border-2 border-border">
+                          <AvatarImage src={expert.avatar} alt={expert.name} />
+                          <AvatarFallback>{expert.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
+                        </Avatar>
+                        <div className="flex-1">
+                          <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-3">
+                            <div>
+                              <h3 className="text-lg font-semibold">{expert.name}</h3>
+                              <p className="text-sm text-muted-foreground">{expert.title}</p>
+                            </div>
+                            <div className="flex items-center space-x-2 mt-2 md:mt-0">
+                              <div className="flex items-center">
+                                <Star className="h-4 w-4 fill-accent text-accent mr-1" />
+                                <span className="font-semibold">{expert.rating}</span>
+                              </div>
+                              <span className="text-muted-foreground">•</span>
+                              <span className="text-sm text-muted-foreground">{expert.experience}</span>
+                            </div>
+                          </div>
+
+                          <div className="flex flex-wrap gap-2 mb-3">
+                            {expert.certifications.map((cert) => (
+                              <Badge key={cert} variant="secondary" className="text-xs">
+                                {cert}
+                              </Badge>
+                            ))}
+                          </div>
+
+                          <Badge variant="outline" className="mb-3">
+                            {expert.specialty}
+                          </Badge>
+
+                          <p className="text-sm text-muted-foreground mb-3">
+                            {expert.description}
+                          </p>
+
+                          <div className="flex flex-wrap gap-2 mb-4">
+                            {expert.domains.map((domain) => (
+                              <Badge key={domain} variant="outline" className="text-xs bg-accent/10">
+                                {domain}
+                              </Badge>
+                            ))}
+                          </div>
+
+                          <div className="flex items-center space-x-2 mb-4 text-sm text-muted-foreground">
+                            <Languages className="h-4 w-4" />
+                            <span>{expert.languages.join(', ')}</span>
+                          </div>
+
+                          <div className="flex flex-col sm:flex-row gap-2">
+                            <Button>
+                              <Calendar className="h-4 w-4 mr-2" />
+                              Réserver une consultation
+                            </Button>
+                            <Button variant="outline">
+                              Voir le profil complet
+                            </Button>
+                          </div>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </TabsContent>
+
+              <TabsContent value="art" className="space-y-4">
+                {filteredBySpecialty("Art").map((expert) => (
+                  <Card key={expert.id} className="shadow-card hover:shadow-lg transition-all">
+                    <CardContent className="pt-6">
+                      <div className="flex flex-col md:flex-row md:items-start space-y-4 md:space-y-0 md:space-x-4">
+                        <Avatar className="h-16 w-16 border-2 border-border">
+                          <AvatarImage src={expert.avatar} alt={expert.name} />
+                          <AvatarFallback>{expert.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
+                        </Avatar>
+                        <div className="flex-1">
+                          <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-3">
+                            <div>
+                              <h3 className="text-lg font-semibold">{expert.name}</h3>
+                              <p className="text-sm text-muted-foreground">{expert.title}</p>
+                            </div>
+                            <div className="flex items-center space-x-2 mt-2 md:mt-0">
+                              <div className="flex items-center">
+                                <Star className="h-4 w-4 fill-accent text-accent mr-1" />
+                                <span className="font-semibold">{expert.rating}</span>
+                              </div>
+                              <span className="text-muted-foreground">•</span>
+                              <span className="text-sm text-muted-foreground">{expert.experience}</span>
+                            </div>
+                          </div>
+
+                          <div className="flex flex-wrap gap-2 mb-3">
+                            {expert.certifications.map((cert) => (
+                              <Badge key={cert} variant="secondary" className="text-xs">
+                                {cert}
+                              </Badge>
+                            ))}
+                          </div>
+
+                          <Badge variant="outline" className="mb-3">
+                            {expert.specialty}
+                          </Badge>
+
+                          <p className="text-sm text-muted-foreground mb-3">
+                            {expert.description}
+                          </p>
+
+                          <div className="flex flex-wrap gap-2 mb-4">
+                            {expert.domains.map((domain) => (
+                              <Badge key={domain} variant="outline" className="text-xs bg-accent/10">
+                                {domain}
+                              </Badge>
+                            ))}
+                          </div>
+
+                          <div className="flex items-center space-x-2 mb-4 text-sm text-muted-foreground">
+                            <Languages className="h-4 w-4" />
+                            <span>{expert.languages.join(', ')}</span>
+                          </div>
+
+                          <div className="flex flex-col sm:flex-row gap-2">
+                            <Button>
+                              <Calendar className="h-4 w-4 mr-2" />
+                              Réserver une consultation
+                            </Button>
+                            <Button variant="outline">
+                              Voir le profil complet
+                            </Button>
+                          </div>
                         </div>
                       </div>
                     </CardContent>
