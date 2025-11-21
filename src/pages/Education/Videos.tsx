@@ -355,7 +355,7 @@ const Videos = () => {
         <DialogContent 
           className={cn(
             "max-w-xs p-0 gap-0 border-0 transition-all duration-300",
-            isChatOpen && "translate-x-[-12rem]"
+            isChatOpen && "right-96 left-auto translate-x-0"
           )}
         >
           <div className="relative">
