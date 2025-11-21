@@ -41,14 +41,6 @@ export const Header = () => {
           </nav>
 
           <div className="flex items-center space-x-3">
-            <Button
-              onClick={() => window.location.href = "/assistant"}
-              className="bg-gradient-primary hover:opacity-90 transition-opacity"
-              size="sm"
-            >
-              <MessageSquare className="h-4 w-4 mr-2" />
-              Assistant Exploration
-            </Button>
             <Button variant="ghost" size="icon">
               <User className="h-5 w-5" />
             </Button>
