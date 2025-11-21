@@ -11,25 +11,25 @@ export default function Onboarding() {
   const options = [
     {
       id: "advisor",
-      title: "Avec mon conseiller",
-      description: "Un accompagnement personnalisé pour débuter",
+      title: "With my advisor",
+      description: "Personalized support to get started",
       icon: Users,
       formats: [
-        { name: "En présentiel", icon: Users },
-        { name: "Par téléphone", icon: Phone },
-        { name: "En visioconférence", icon: Video },
+        { name: "In person", icon: Users },
+        { name: "By phone", icon: Phone },
+        { name: "By video conference", icon: Video },
       ],
     },
     {
       id: "autonomous",
-      title: "De manière autonome",
-      description: "Questionnaire guidé et simulation personnalisée",
+      title: "Independently",
+      description: "Guided questionnaire and personalized simulation",
       icon: Sparkles,
     },
     {
       id: "existing",
-      title: "Déjà client",
-      description: "Accéder directement à mon espace",
+      title: "Existing client",
+      description: "Access my space directly",
       icon: ArrowRight,
     },
   ];
@@ -48,12 +48,12 @@ export default function Onboarding() {
             <div className="h-12 w-12 rounded-xl bg-gradient-primary" />
             <div className="text-left">
               <h1 className="text-2xl font-bold">BNP Paribas</h1>
-              <p className="text-sm text-muted-foreground">Banque Privée</p>
+              <p className="text-sm text-muted-foreground">Private Banking</p>
             </div>
           </div>
-          <h2 className="text-4xl font-bold mb-4">Bienvenue dans votre espace privé</h2>
+          <h2 className="text-4xl font-bold mb-4">Welcome to your private space</h2>
           <p className="text-xl text-muted-foreground">
-            Comment souhaitez-vous commencer votre expérience ?
+            How would you like to start your experience?
           </p>
         </div>
 
@@ -104,7 +104,7 @@ export default function Onboarding() {
               onClick={handleContinue}
               className="bg-gradient-primary hover:opacity-90 transition-opacity px-8"
             >
-              Continuer
+              Continue
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </div>
