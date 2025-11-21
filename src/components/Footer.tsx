@@ -15,7 +15,7 @@ export const Footer = () => {
               <div className="p-2 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
                 <Bell className="h-5 w-5 text-primary" />
               </div>
-              <span className="font-medium">Urgence</span>
+              <span className="font-medium">Emergency</span>
             </Link>
             
             <Link 
@@ -25,7 +25,7 @@ export const Footer = () => {
               <div className="p-2 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
                 <MapPin className="h-5 w-5 text-primary" />
               </div>
-              <span className="font-medium">Trouver un centre</span>
+              <span className="font-medium">Find a center</span>
             </Link>
             
             <Link 
@@ -45,7 +45,7 @@ export const Footer = () => {
               <div className="p-2 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
                 <Shield className="h-5 w-5 text-primary" />
               </div>
-              <span className="font-medium">Sécurité & bonnes pratiques</span>
+              <span className="font-medium">Security & best practices</span>
             </Link>
           </div>
         </div>
@@ -54,70 +54,70 @@ export const Footer = () => {
       {/* Main Footer Content */}
       <div className="container mx-auto px-4 py-12">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
-          {/* La banque Privée */}
+          {/* Private Banking */}
           <div>
-            <h3 className="font-bold text-lg mb-4 text-foreground">La banque Privée</h3>
+            <h3 className="font-bold text-lg mb-4 text-foreground">Private Banking</h3>
             <ul className="space-y-3">
               <li>
                 <Link to="#" className="text-muted-foreground hover:text-primary transition-colors">
-                  Patrimoine
+                  Wealth
                 </Link>
               </li>
               <li>
                 <Link to="#" className="text-muted-foreground hover:text-primary transition-colors">
-                  Investissement
+                  Investment
                 </Link>
               </li>
               <li>
                 <Link to="#" className="text-muted-foreground hover:text-primary transition-colors">
-                  Financement
+                  Financing
                 </Link>
               </li>
               <li>
                 <Link to="#" className="text-muted-foreground hover:text-primary transition-colors">
-                  Services bancaires
+                  Banking Services
                 </Link>
               </li>
               <li>
                 <Link to="#" className="text-muted-foreground hover:text-primary transition-colors">
-                  Être client
+                  Become a Client
                 </Link>
               </li>
               <li>
                 <Link to="#" className="text-muted-foreground hover:text-primary transition-colors">
-                  Actualités
+                  News
                 </Link>
               </li>
               <li>
                 <Link to="#" className="text-muted-foreground hover:text-primary transition-colors">
-                  Nous contacter
+                  Contact Us
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Informations */}
+          {/* Information */}
           <div>
-            <h3 className="font-bold text-lg mb-4 text-foreground">Informations</h3>
+            <h3 className="font-bold text-lg mb-4 text-foreground">Information</h3>
             <ul className="space-y-3">
               <li>
                 <Link to="#" className="text-muted-foreground hover:text-primary transition-colors">
-                  Politiques
+                  Policies
                 </Link>
               </li>
               <li>
                 <Link to="#" className="text-muted-foreground hover:text-primary transition-colors">
-                  Informations en matière de durabilité
+                  Sustainability Information
                 </Link>
               </li>
               <li>
                 <Link to="#" className="text-muted-foreground hover:text-primary transition-colors">
-                  Mentions légales
+                  Legal Notice
                 </Link>
               </li>
               <li>
                 <Link to="#" className="text-muted-foreground hover:text-primary transition-colors">
-                  Banque en ligne : Bonnes pratiques
+                  Online Banking: Best Practices
                 </Link>
               </li>
               <li>
@@ -127,29 +127,29 @@ export const Footer = () => {
               </li>
               <li>
                 <Link to="#" className="text-muted-foreground hover:text-primary transition-colors">
-                  Glossaire
+                  Glossary
                 </Link>
               </li>
               <li>
                 <Link to="#" className="text-muted-foreground hover:text-primary transition-colors">
-                  Données personnelles
+                  Personal Data
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Chartes & Réglementations */}
+          {/* Charters & Regulations */}
           <div>
-            <h3 className="font-bold text-lg mb-4 text-foreground">Chartes & Réglementations</h3>
+            <h3 className="font-bold text-lg mb-4 text-foreground">Charters & Regulations</h3>
             <ul className="space-y-3">
               <li>
                 <Link to="#" className="text-muted-foreground hover:text-primary transition-colors">
-                  Loi Eckert
+                  Eckert Law
                 </Link>
               </li>
               <li>
                 <Link to="#" className="text-muted-foreground hover:text-primary transition-colors">
-                  Fonds de garantie
+                  Guarantee Fund
                 </Link>
               </li>
               <li>
@@ -164,11 +164,11 @@ export const Footer = () => {
               </li>
             </ul>
             
-            <h3 className="font-bold text-lg mt-6 mb-4 text-foreground">Nos autres sites</h3>
+            <h3 className="font-bold text-lg mt-6 mb-4 text-foreground">Our Other Sites</h3>
             <ul className="space-y-3">
               <li>
                 <Link to="#" className="text-muted-foreground hover:text-primary transition-colors">
-                  Groupe BNPP
+                  BNPP Group
                 </Link>
               </li>
             </ul>
@@ -183,7 +183,7 @@ export const Footer = () => {
                 </div>
                 <div>
                   <h3 className="font-bold text-foreground">BNP PARIBAS</h3>
-                  <p className="text-sm text-muted-foreground">BANQUE PRIVÉE</p>
+                  <p className="text-sm text-muted-foreground">PRIVATE BANKING</p>
                 </div>
               </div>
               
@@ -192,14 +192,14 @@ export const Footer = () => {
                   <Phone className="h-4 w-4 text-primary" />
                   <div>
                     <p className="font-semibold">3273</p>
-                    <p className="text-muted-foreground text-xs">Service gratuit + prix d'un appel</p>
+                    <p className="text-muted-foreground text-xs">Free service + call charge</p>
                   </div>
                 </div>
               </div>
             </div>
 
             <div>
-              <h3 className="font-bold text-sm mb-3 text-foreground">Suivez-nous</h3>
+              <h3 className="font-bold text-sm mb-3 text-foreground">Follow us</h3>
               <div className="flex gap-3">
                 <Link 
                   to="https://instagram.com" 
@@ -222,7 +222,7 @@ export const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-border/30 text-center text-sm text-muted-foreground">
-          <p>© {new Date().getFullYear()} BNP Paribas Banque Privée. Tous droits réservés.</p>
+          <p>© {new Date().getFullYear()} BNP Paribas Private Banking. All rights reserved.</p>
         </div>
       </div>
     </footer>

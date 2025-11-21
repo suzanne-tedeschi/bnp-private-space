@@ -4,9 +4,9 @@ import { MessageSquare, User } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navigation = [
-  { name: "Investir", href: "/investments" },
-  { name: "M'éduquer", href: "/education" },
-  { name: "Consulter mes Experts", href: "/premium-expertise" },
+  { name: "Invest", href: "/investments" },
+  { name: "Learn", href: "/education" },
+  { name: "Consult my Experts", href: "/premium-expertise" },
   { name: "Club Deal", href: "/club-deal" },
 ];
 
@@ -20,7 +20,7 @@ export const Header = () => {
           <Link to="/dashboard" className="flex items-center space-x-2">
             <div className="h-8 w-8 rounded-lg bg-gradient-primary" />
             <span className="text-xl font-semibold">BNP Paribas</span>
-            <span className="text-sm text-muted-foreground font-light">Banque Privée</span>
+            <span className="text-sm text-muted-foreground font-light">Private Banking</span>
           </Link>
 
           <nav className="hidden md:flex items-center space-x-1">
