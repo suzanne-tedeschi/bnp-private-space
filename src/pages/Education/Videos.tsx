@@ -14,7 +14,7 @@ const videoCategories = {
   introduction: [
     {
       id: 1,
-      title: "Les intérêts d'un PEA",
+      title: "The benefits of a PEA",
       duration: "3:24",
       views: "12.5k",
       videoUrl: "/videos/pea-interets.mp4",
@@ -22,7 +22,7 @@ const videoCategories = {
     },
     {
       id: 2,
-      title: "Comment investir dans un ETF Monde",
+      title: "How to invest in a World ETF",
       duration: "2:45",
       views: "9.8k",
       videoUrl: "/videos/introduction-2.mp4",
@@ -30,21 +30,21 @@ const videoCategories = {
     },
     {
       id: 3,
-      title: "Comprendre les bases de l'investissement",
+      title: "Understanding the basics of investing",
       duration: "3:10",
       views: "15.2k",
       thumbnail: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=800&q=80",
     },
     {
       id: 4,
-      title: "Le pouvoir des intérêts composés",
+      title: "The power of compound interest",
       duration: "2:55",
       views: "11.3k",
       thumbnail: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=800&q=80",
     },
     {
       id: 5,
-      title: "Sport : Actualités et opportunités d'investissement",
+      title: "Sports: News and investment opportunities",
       duration: "2:30",
       views: "8.4k",
       videoUrl: "/videos/sport-actualites.mp4",
@@ -54,21 +54,21 @@ const videoCategories = {
   tech: [
     {
       id: 6,
-      title: "IA et Machine Learning : les leaders du secteur",
+      title: "AI and Machine Learning: industry leaders",
       duration: "4:12",
       views: "18.7k",
       thumbnail: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80",
     },
     {
       id: 7,
-      title: "Semiconducteurs : la guerre des puces",
+      title: "Semiconductors: the chip war",
       duration: "3:45",
       views: "14.2k",
       thumbnail: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80",
     },
     {
       id: 8,
-      title: "Cloud Computing : investir dans l'infrastructure",
+      title: "Cloud Computing: investing in infrastructure",
       duration: "3:30",
       views: "10.9k",
       thumbnail: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800&q=80",
@@ -77,21 +77,21 @@ const videoCategories = {
   crypto: [
     {
       id: 9,
-      title: "Bitcoin et Ethereum : comprendre les fondamentaux",
+      title: "Bitcoin and Ethereum: understanding the fundamentals",
       duration: "4:20",
       views: "22.1k",
       thumbnail: "https://images.unsplash.com/photo-1621761191319-c6fb62004040?w=800&q=80",
     },
     {
       id: 10,
-      title: "DeFi : la finance décentralisée expliquée",
+      title: "DeFi: decentralized finance explained",
       duration: "3:55",
       views: "16.4k",
       thumbnail: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&q=80",
     },
     {
       id: 11,
-      title: "NFTs et tokenisation d'actifs",
+      title: "NFTs and asset tokenization",
       duration: "3:15",
       views: "13.8k",
       thumbnail: "https://images.unsplash.com/photo-1645731947731-67e1536fe127?w=800&q=80",
@@ -100,21 +100,21 @@ const videoCategories = {
   art: [
     {
       id: 12,
-      title: "Art contemporain : identifier les talents émergents",
+      title: "Contemporary art: identifying emerging talents",
       duration: "4:30",
       views: "8.9k",
       thumbnail: "https://images.unsplash.com/photo-1536924940846-227afb31e2a5?w=800&q=80",
     },
     {
       id: 13,
-      title: "Maîtres anciens : investissement de patrimoine",
+      title: "Old Masters: heritage investment",
       duration: "3:50",
       views: "7.2k",
       thumbnail: "https://images.unsplash.com/photo-1577083552431-6e5fd01c3898?w=800&q=80",
     },
     {
       id: 14,
-      title: "Art digital et galeries virtuelles",
+      title: "Digital art and virtual galleries",
       duration: "3:25",
       views: "11.5k",
       thumbnail: "https://images.unsplash.com/photo-1561214115-f2f134cc4912?w=800&q=80",
@@ -123,21 +123,21 @@ const videoCategories = {
   sport: [
     {
       id: 15,
-      title: "Investir dans les franchises sportives",
+      title: "Investing in sports franchises",
       duration: "4:05",
       views: "9.6k",
       thumbnail: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=800&q=80",
     },
     {
       id: 16,
-      title: "E-sport : le nouveau terrain de jeu des investisseurs",
+      title: "E-sports: investors' new playground",
       duration: "3:35",
       views: "12.3k",
       thumbnail: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&q=80",
     },
     {
       id: 17,
-      title: "Équipementiers sportifs : analyse sectorielle",
+      title: "Sports equipment manufacturers: sector analysis",
       duration: "3:20",
       views: "8.1k",
       thumbnail: "https://images.unsplash.com/photo-1556906781-9a412961c28c?w=800&q=80",
@@ -146,21 +146,21 @@ const videoCategories = {
   luxury: [
     {
       id: 18,
-      title: "LVMH, Hermès, Kering : les géants du luxe",
+      title: "LVMH, Hermès, Kering: luxury giants",
       duration: "4:15",
       views: "15.7k",
       thumbnail: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=800&q=80",
     },
     {
       id: 19,
-      title: "Montres de collection : horlogerie et investissement",
+      title: "Collectible watches: watchmaking and investment",
       duration: "3:40",
       views: "10.2k",
       thumbnail: "https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=800&q=80",
     },
     {
       id: 20,
-      title: "Vins et spiritueux : patrimoine liquide",
+      title: "Wines and spirits: liquid wealth",
       duration: "3:55",
       views: "7.8k",
       thumbnail: "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=800&q=80",
@@ -169,21 +169,21 @@ const videoCategories = {
   immobilier: [
     {
       id: 21,
-      title: "SCPI et REIT : l'immobilier sans contrainte",
+      title: "SCPI and REIT: hassle-free real estate",
       duration: "3:50",
       views: "13.4k",
       thumbnail: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80",
     },
     {
       id: 22,
-      title: "Immobilier commercial : bureaux et retail",
+      title: "Commercial real estate: offices and retail",
       duration: "4:00",
       views: "9.7k",
       thumbnail: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80",
     },
     {
       id: 23,
-      title: "Logistique et datacenters : les nouveaux eldorados",
+      title: "Logistics and datacenters: the new eldorados",
       duration: "3:30",
       views: "11.8k",
       thumbnail: "https://images.unsplash.com/photo-1565514158740-64d8c6de9870?w=800&q=80",
@@ -192,21 +192,21 @@ const videoCategories = {
   green: [
     {
       id: 24,
-      title: "Énergies renouvelables : solaire, éolien, hydrogène",
+      title: "Renewable energies: solar, wind, hydrogen",
       duration: "4:25",
       views: "16.9k",
       thumbnail: "https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=800&q=80",
     },
     {
       id: 25,
-      title: "Véhicules électriques : au-delà de Tesla",
+      title: "Electric vehicles: beyond Tesla",
       duration: "3:45",
       views: "14.6k",
       thumbnail: "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=800&q=80",
     },
     {
       id: 26,
-      title: "Économie circulaire et gestion des déchets",
+      title: "Circular economy and waste management",
       duration: "3:20",
       views: "8.5k",
       thumbnail: "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=800&q=80",
@@ -262,15 +262,15 @@ const Videos = () => {
       <Header />
       <div className="container mx-auto px-4 py-8">
         <div className="mb-8">
-          <h1 className="text-4xl font-bold mb-3">Vidéos Format Court</h1>
+          <h1 className="text-4xl font-bold mb-3">Short-Form Videos</h1>
           <p className="text-muted-foreground text-lg">
-            Apprenez rapidement avec nos vidéos courtes et impactantes
+            Learn quickly with our short and impactful videos
           </p>
         </div>
 
-        {/* Pour Vous Section */}
+        {/* For You Section */}
         <div className="mb-8">
-          <h2 className="text-2xl font-bold mb-4">Pour vous</h2>
+          <h2 className="text-2xl font-bold mb-4">For you</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {videoCategories.introduction.slice(2, 6).map((video) => (
               <Card 
@@ -293,7 +293,7 @@ const Videos = () => {
                     <Clock className="h-3 w-3 mr-1" />
                     {video.duration}
                   </Badge>
-                  <Badge className="absolute top-2 left-2 bg-primary">Recommandé</Badge>
+                  <Badge className="absolute top-2 left-2 bg-primary">Recommended</Badge>
                 </div>
                 <CardHeader className="p-4">
                   <CardTitle className="text-sm group-hover:text-primary transition-colors">
@@ -312,41 +312,41 @@ const Videos = () => {
             <TabsTrigger value="crypto">Crypto</TabsTrigger>
             <TabsTrigger value="art">Art</TabsTrigger>
             <TabsTrigger value="sport">Sport</TabsTrigger>
-            <TabsTrigger value="luxury">Luxe</TabsTrigger>
-            <TabsTrigger value="immobilier">Immobilier</TabsTrigger>
-            <TabsTrigger value="green">Vert</TabsTrigger>
+            <TabsTrigger value="luxury">Luxury</TabsTrigger>
+            <TabsTrigger value="immobilier">Real Estate</TabsTrigger>
+            <TabsTrigger value="green">Green</TabsTrigger>
           </TabsList>
 
           <TabsContent value="introduction">
-            <VideoGrid videos={videoCategories.introduction} categoryName="Introduction Générale" onVideoClick={setSelectedVideo} videoThumbnails={videoThumbnails} />
+            <VideoGrid videos={videoCategories.introduction} categoryName="General Introduction" onVideoClick={setSelectedVideo} videoThumbnails={videoThumbnails} />
           </TabsContent>
 
           <TabsContent value="tech">
-            <VideoGrid videos={videoCategories.tech} categoryName="Technologie" onVideoClick={setSelectedVideo} />
+            <VideoGrid videos={videoCategories.tech} categoryName="Technology" onVideoClick={setSelectedVideo} />
           </TabsContent>
 
           <TabsContent value="crypto">
-            <VideoGrid videos={videoCategories.crypto} categoryName="Cryptomonnaies & Blockchain" onVideoClick={setSelectedVideo} />
+            <VideoGrid videos={videoCategories.crypto} categoryName="Cryptocurrencies & Blockchain" onVideoClick={setSelectedVideo} />
           </TabsContent>
 
           <TabsContent value="art">
-            <VideoGrid videos={videoCategories.art} categoryName="Art & Collection" onVideoClick={setSelectedVideo} />
+            <VideoGrid videos={videoCategories.art} categoryName="Art & Collectibles" onVideoClick={setSelectedVideo} />
           </TabsContent>
 
           <TabsContent value="sport">
-            <VideoGrid videos={videoCategories.sport} categoryName="Sport & E-sport" onVideoClick={setSelectedVideo} />
+            <VideoGrid videos={videoCategories.sport} categoryName="Sports & E-sports" onVideoClick={setSelectedVideo} />
           </TabsContent>
 
           <TabsContent value="luxury">
-            <VideoGrid videos={videoCategories.luxury} categoryName="Luxe & Passion" onVideoClick={setSelectedVideo} />
+            <VideoGrid videos={videoCategories.luxury} categoryName="Luxury & Passion" onVideoClick={setSelectedVideo} />
           </TabsContent>
 
           <TabsContent value="immobilier">
-            <VideoGrid videos={videoCategories.immobilier} categoryName="Immobilier" onVideoClick={setSelectedVideo} />
+            <VideoGrid videos={videoCategories.immobilier} categoryName="Real Estate" onVideoClick={setSelectedVideo} />
           </TabsContent>
 
           <TabsContent value="green">
-            <VideoGrid videos={videoCategories.green} categoryName="Transition Écologique" onVideoClick={setSelectedVideo} />
+            <VideoGrid videos={videoCategories.green} categoryName="Ecological Transition" onVideoClick={setSelectedVideo} />
           </TabsContent>
         </Tabs>
       </div>
@@ -393,11 +393,11 @@ const Videos = () => {
                 className="w-full aspect-[9/16] bg-black rounded-t-lg"
                 src={selectedVideo.videoUrl}
               >
-                Votre navigateur ne supporte pas la lecture de vidéos.
+                Your browser does not support video playback.
               </video>
             ) : (
               <div className="aspect-[9/16] bg-muted flex items-center justify-center rounded-t-lg">
-                <p className="text-muted-foreground">Vidéo non disponible</p>
+                <p className="text-muted-foreground">Video not available</p>
               </div>
             )}
             <div className="p-4 bg-background">
@@ -472,7 +472,7 @@ const VideoGrid = ({ videos, categoryName, onVideoClick, videoThumbnails = {} }:
               <CardTitle className="text-base group-hover:text-primary transition-colors">
                 {video.title}
               </CardTitle>
-              <CardDescription>{video.views} vues</CardDescription>
+              <CardDescription>{video.views} views</CardDescription>
             </CardHeader>
           </Card>
         ))}

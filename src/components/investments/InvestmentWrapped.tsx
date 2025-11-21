@@ -17,12 +17,12 @@ const wrappedStats = {
     amount: 75000,
   },
   diversificationScore: 85,
-  riskScore: "Équilibré",
-  yearlyHighlight: "Croissance constante sur 9 mois",
+  riskScore: "Balanced",
+  yearlyHighlight: "Consistent growth over 9 months",
   achievements: [
-    { icon: Star, label: "Diversification Exemplaire", description: "8 classes d'actifs différentes" },
-    { icon: Crown, label: "Performance Supérieure", description: "+7.49% vs marché +5.2%" },
-    { icon: Zap, label: "Investisseur Régulier", description: "9 mois consécutifs d'investissement" },
+    { icon: Star, label: "Exemplary Diversification", description: "8 different asset classes" },
+    { icon: Crown, label: "Superior Performance", description: "+7.49% vs market +5.2%" },
+    { icon: Zap, label: "Regular Investor", description: "9 consecutive months of investment" },
   ],
 };
 
@@ -31,10 +31,10 @@ export const InvestmentWrapped = () => {
     <div className="space-y-6">
       <div className="text-center space-y-2">
         <h2 className="text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-          Votre Année 2024 en Investissements
+          Your 2024 in Investments
         </h2>
         <p className="text-muted-foreground">
-          Récapitulatif de votre parcours d'investisseur
+          Summary of your investor journey
         </p>
       </div>
 
@@ -42,30 +42,30 @@ export const InvestmentWrapped = () => {
       <div className="grid md:grid-cols-3 gap-4">
         <Card className="shadow-card bg-gradient-to-br from-primary/10 to-primary/5">
           <CardHeader>
-            <CardTitle className="text-sm text-muted-foreground">Valeur Totale</CardTitle>
+            <CardTitle className="text-sm text-muted-foreground">Total Value</CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-3xl font-bold">{wrappedStats.totalValue.toLocaleString('fr-FR')} €</p>
+            <p className="text-3xl font-bold">{wrappedStats.totalValue.toLocaleString('en-US')} €</p>
             <div className="flex items-center text-primary mt-2">
               <TrendingUp className="h-4 w-4 mr-1" />
-              <span className="text-sm">+{wrappedStats.totalGainPercent}% cette année</span>
+              <span className="text-sm">+{wrappedStats.totalGainPercent}% this year</span>
             </div>
           </CardContent>
         </Card>
 
         <Card className="shadow-card bg-gradient-to-br from-accent/10 to-accent/5">
           <CardHeader>
-            <CardTitle className="text-sm text-muted-foreground">Plus-Value</CardTitle>
+            <CardTitle className="text-sm text-muted-foreground">Capital Gain</CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-3xl font-bold text-primary">+{wrappedStats.totalGain.toLocaleString('fr-FR')} €</p>
-            <p className="text-sm text-muted-foreground mt-2">Sur {wrappedStats.totalInvested.toLocaleString('fr-FR')} € investis</p>
+            <p className="text-3xl font-bold text-primary">+{wrappedStats.totalGain.toLocaleString('en-US')} €</p>
+            <p className="text-sm text-muted-foreground mt-2">On {wrappedStats.totalInvested.toLocaleString('en-US')} € invested</p>
           </CardContent>
         </Card>
 
         <Card className="shadow-card bg-gradient-to-br from-secondary/10 to-secondary/5">
           <CardHeader>
-            <CardTitle className="text-sm text-muted-foreground">Score de Diversification</CardTitle>
+            <CardTitle className="text-sm text-muted-foreground">Diversification Score</CardTitle>
           </CardHeader>
           <CardContent>
             <p className="text-3xl font-bold">{wrappedStats.diversificationScore}/100</p>
@@ -79,18 +79,18 @@ export const InvestmentWrapped = () => {
         <CardHeader>
           <div className="flex items-center gap-2">
             <Award className="h-5 w-5 text-primary" />
-            <CardTitle>Meilleur Investissement 2024</CardTitle>
+            <CardTitle>Best Investment 2024</CardTitle>
           </div>
         </CardHeader>
         <CardContent>
           <div className="flex items-center justify-between">
             <div>
               <p className="text-xl font-bold">{wrappedStats.bestPerformer.name}</p>
-              <p className="text-sm text-muted-foreground">Performance annuelle</p>
+              <p className="text-sm text-muted-foreground">Annual performance</p>
             </div>
             <div className="text-right">
               <p className="text-2xl font-bold text-primary">+{wrappedStats.bestPerformer.performance}%</p>
-              <p className="text-sm text-muted-foreground">+{wrappedStats.bestPerformer.gain.toLocaleString('fr-FR')} €</p>
+              <p className="text-sm text-muted-foreground">+{wrappedStats.bestPerformer.gain.toLocaleString('en-US')} €</p>
             </div>
           </div>
         </CardContent>
@@ -99,7 +99,7 @@ export const InvestmentWrapped = () => {
       {/* Achievements */}
       <Card className="shadow-card">
         <CardHeader>
-          <CardTitle>Vos Accomplissements</CardTitle>
+          <CardTitle>Your Achievements</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="space-y-4">

@@ -4,10 +4,10 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 const getDiversificationData = (selectedRecommendation?: string) => {
   const baseData = [
     { category: "Europe", geographie: 65, industrie: 45 },
-    { category: "Amérique du Nord", geographie: 25, industrie: 70 },
-    { category: "Asie-Pacifique", geographie: 15, industrie: 30 },
-    { category: "Émergents", geographie: 10, industrie: 20 },
-    { category: "Technologie", geographie: 40, industrie: 75 },
+    { category: "North America", geographie: 25, industrie: 70 },
+    { category: "Asia-Pacific", geographie: 15, industrie: 30 },
+    { category: "Emerging", geographie: 10, industrie: 20 },
+    { category: "Technology", geographie: 40, industrie: 75 },
     { category: "Finance", geographie: 55, industrie: 60 },
     { category: "Santé", geographie: 30, industrie: 35 },
     { category: "Énergie", geographie: 20, industrie: 25 },
@@ -49,9 +49,9 @@ export const DiversificationRadar = ({ selectedRecommendation }: Diversification
   return (
     <Card className="shadow-card">
       <CardHeader>
-        <CardTitle>Diversification du Portefeuille</CardTitle>
+        <CardTitle>Portfolio Diversification</CardTitle>
         <CardDescription>
-          Répartition géographique et sectorielle
+          Geographic and sectoral allocation
         </CardDescription>
       </CardHeader>
       <CardContent>
@@ -68,7 +68,7 @@ export const DiversificationRadar = ({ selectedRecommendation }: Diversification
               tick={{ fill: "hsl(var(--muted-foreground))" }}
             />
             <Radar
-              name="Géographie"
+              name="Geography"
               dataKey="geographie"
               stroke="hsl(156 100% 29%)"
               fill="hsl(156 100% 29%)"
@@ -76,7 +76,7 @@ export const DiversificationRadar = ({ selectedRecommendation }: Diversification
               strokeWidth={2}
             />
             <Radar
-              name="Industrie"
+              name="Industry"
               dataKey="industrie"
               stroke="hsl(75 100% 60%)"
               fill="hsl(75 100% 60%)"

@@ -38,9 +38,9 @@ export const CombinedChart = ({ selectedScenario }: CombinedChartProps) => {
   return (
     <Card className="shadow-card">
       <CardHeader>
-        <CardTitle>Évolution du Portefeuille Global</CardTitle>
+        <CardTitle>Global Portfolio Evolution</CardTitle>
         <CardDescription>
-          Historique et projections basées sur les tendances actuelles
+          Historical data and projections based on current trends
         </CardDescription>
       </CardHeader>
       <CardContent>
@@ -74,7 +74,7 @@ export const CombinedChart = ({ selectedScenario }: CombinedChartProps) => {
               dataKey="valeur"
               stroke="hsl(156 100% 29%)"
               strokeWidth={3}
-              name="Historique"
+              name="Historical"
               dot={{ fill: "hsl(156 100% 29%)", r: 4 }}
             />
             
@@ -85,7 +85,7 @@ export const CombinedChart = ({ selectedScenario }: CombinedChartProps) => {
               stroke="hsl(142 76% 36%)"
               strokeWidth={2}
               strokeDasharray="5 5"
-              name="Meilleur scénario"
+              name="Best scenario"
               dot={false}
             />
             <Line
@@ -94,7 +94,7 @@ export const CombinedChart = ({ selectedScenario }: CombinedChartProps) => {
               stroke="hsl(75 100% 60%)"
               strokeWidth={2}
               strokeDasharray="5 5"
-              name="Scénario probable"
+              name="Likely scenario"
               dot={false}
             />
             <Line
@@ -103,7 +103,7 @@ export const CombinedChart = ({ selectedScenario }: CombinedChartProps) => {
               stroke="hsl(0 84% 60%)"
               strokeWidth={2}
               strokeDasharray="5 5"
-              name="Scénario critique"
+              name="Critical scenario"
               dot={false}
             />
           </LineChart>
