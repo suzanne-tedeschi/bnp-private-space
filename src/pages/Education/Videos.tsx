@@ -352,9 +352,13 @@ const Videos = () => {
       </div>
 
       <Dialog open={!!selectedVideo} onOpenChange={() => setSelectedVideo(null)} modal={false}>
+        <div className={cn(
+          "fixed inset-0 bg-black/60 backdrop-blur-sm z-40 transition-opacity duration-300",
+          selectedVideo ? "opacity-100" : "opacity-0 pointer-events-none"
+        )} />
         <DialogContent 
           className={cn(
-            "max-w-xs p-0 gap-0 border-0 transition-all duration-300 left-1/2 -translate-x-1/2",
+            "max-w-xs p-0 gap-0 border border-primary/30 shadow-2xl left-1/2 -translate-x-1/2 z-50",
             isChatOpen && "!left-[calc(50%-12rem)]"
           )}
         >
