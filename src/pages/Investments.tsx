@@ -73,7 +73,7 @@ export default function Investments() {
       
       <main className="container mx-auto px-4 py-8">
         <div className="mb-8">
-          <h1 className="text-3xl font-bold mb-2">Mes Investissements</h1>
+          <h1 className="text-3xl font-bold mb-2">Investissements</h1>
           <p className="text-muted-foreground">Suivi détaillé de votre portefeuille</p>
         </div>
 
