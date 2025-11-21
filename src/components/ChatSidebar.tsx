@@ -45,12 +45,65 @@ export const ChatSidebar = ({ isOpen, setIsOpen }: ChatSidebarProps) => {
   const [showQuickActions, setShowQuickActions] = useState(true);
   const scrollRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [dragStartX, setDragStartX] = useState(0);
+  const [dragOffset, setDragOffset] = useState(0);
 
   useEffect(() => {
     if (scrollRef.current) {
       scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
     }
   }, [messages, isTyping]);
+
+  const handleDragStart = (clientX: number) => {
+    setIsDragging(true);
+    setDragStartX(clientX);
+  };
+
+  const handleDragMove = (clientX: number) => {
+    if (!isDragging) return;
+    const offset = clientX - dragStartX;
+    // Only allow dragging to the right (closing)
+    if (isOpen && offset > 0) {
+      setDragOffset(Math.min(offset, 384)); // 384px = w-96
+    } else if (!isOpen && offset < 0) {
+      setDragOffset(Math.max(offset, -384));
+    }
+  };
+
+  const handleDragEnd = () => {
+    if (!isDragging) return;
+    setIsDragging(false);
+    
+    // If dragged more than 30% of width, toggle
+    const threshold = 384 * 0.3;
+    if (Math.abs(dragOffset) > threshold) {
+      setIsOpen(!isOpen);
+    }
+    
+    setDragOffset(0);
+  };
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => handleDragMove(e.clientX);
+    const handleTouchMove = (e: TouchEvent) => handleDragMove(e.touches[0].clientX);
+    const handleMouseUp = () => handleDragEnd();
+    const handleTouchEnd = () => handleDragEnd();
+
+    if (isDragging) {
+      window.addEventListener("mousemove", handleMouseMove);
+      window.addEventListener("touchmove", handleTouchMove);
+      window.addEventListener("mouseup", handleMouseUp);
+      window.addEventListener("touchend", handleTouchEnd);
+
+      return () => {
+        window.removeEventListener("mousemove", handleMouseMove);
+        window.removeEventListener("touchmove", handleTouchMove);
+        window.removeEventListener("mouseup", handleMouseUp);
+        window.removeEventListener("touchend", handleTouchEnd);
+      };
+    }
+  }, [isDragging, dragStartX]);
 
   const handleSend = (customPrompt?: string) => {
     const messageContent = customPrompt || inputValue;
@@ -122,19 +175,31 @@ export const ChatSidebar = ({ isOpen, setIsOpen }: ChatSidebarProps) => {
       <div
         className={cn(
           "fixed right-0 top-0 h-full bg-gradient-to-br from-primary/5 via-background to-primary/10 border-l border-border shadow-2xl transition-transform duration-300 ease-in-out z-40 flex flex-col",
-          isOpen ? "translate-x-0 w-96" : "translate-x-full w-96"
+          isOpen ? "w-96" : "w-96"
         )}
+        style={{
+          transform: isOpen 
+            ? `translateX(${dragOffset}px)` 
+            : `translateX(calc(100% + ${dragOffset}px))`,
+          transition: isDragging ? 'none' : 'transform 0.3s ease-in-out',
+        }}
       >
-        {/* Slide Handle - Visible when open */}
-        {isOpen && (
-          <button
-            onClick={() => setIsOpen(false)}
-            className="absolute -left-8 top-1/2 -translate-y-1/2 h-16 w-8 bg-card border border-r-0 border-border rounded-l-lg flex items-center justify-center hover:bg-muted transition-colors group"
-            aria-label="Fermer le chat"
-          >
-            <ChevronRight className="h-5 w-5 text-muted-foreground group-hover:text-foreground" />
-          </button>
-        )}
+        {/* Slide Handle */}
+        <button
+          onMouseDown={(e) => handleDragStart(e.clientX)}
+          onTouchStart={(e) => handleDragStart(e.touches[0].clientX)}
+          className={cn(
+            "absolute -left-8 top-1/2 -translate-y-1/2 h-16 w-8 bg-card/80 backdrop-blur-sm border border-r-0 border-border rounded-l-lg flex items-center justify-center hover:bg-muted transition-colors group cursor-grab active:cursor-grabbing",
+            isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+          )}
+          aria-label="Glisser pour fermer le chat"
+        >
+          <div className="flex flex-col gap-1">
+            <div className="h-1 w-4 bg-muted-foreground/30 rounded-full group-hover:bg-muted-foreground/50 transition-colors" />
+            <div className="h-1 w-4 bg-muted-foreground/30 rounded-full group-hover:bg-muted-foreground/50 transition-colors" />
+            <div className="h-1 w-4 bg-muted-foreground/30 rounded-full group-hover:bg-muted-foreground/50 transition-colors" />
+          </div>
+        </button>
 
         {/* Header */}
         <div className="flex items-center justify-between p-4 border-b border-border/50 backdrop-blur-sm bg-background/50">
