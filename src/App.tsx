@@ -9,6 +9,7 @@ import Investments from "./pages/Investments";
 import Diversify from "./pages/Diversify";
 import Assistant from "./pages/Assistant";
 import NotFound from "./pages/NotFound";
+import Education from "./pages/Education";
 import Articles from "./pages/Education/Articles";
 import Videos from "./pages/Education/Videos";
 import Podcasts from "./pages/Education/Podcasts";
@@ -29,6 +30,7 @@ const App = () => (
           <Route path="/investments" element={<Investments />} />
           <Route path="/diversify" element={<Diversify />} />
           <Route path="/assistant" element={<Assistant />} />
+          <Route path="/education" element={<Education />} />
           <Route path="/education/articles" element={<Articles />} />
           <Route path="/education/videos" element={<Videos />} />
           <Route path="/education/podcasts" element={<Podcasts />} />

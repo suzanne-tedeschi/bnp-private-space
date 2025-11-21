@@ -7,6 +7,7 @@ const navigation = [
   { name: "Accueil", href: "/dashboard" },
   { name: "Investissements", href: "/investments" },
   { name: "Diversifier", href: "/diversify" },
+  { name: "M'éduquer", href: "/education" },
 ];
 
 export const Header = () => {
