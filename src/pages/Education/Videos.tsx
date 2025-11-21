@@ -4,7 +4,8 @@ import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Play, Clock } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { generateVideoThumbnail } from "@/utils/videoThumbnail";
 
 const videoCategories = {
   introduction: [
@@ -203,6 +204,19 @@ const videoCategories = {
 
 const Videos = () => {
   const [selectedVideo, setSelectedVideo] = useState<{ title: string; videoUrl?: string } | null>(null);
+  const [videoThumbnails, setVideoThumbnails] = useState<Record<number, string>>({});
+
+  useEffect(() => {
+    // Generate thumbnail for the first video
+    const video = videoCategories.introduction[0];
+    if (video.videoUrl && !videoThumbnails[video.id]) {
+      generateVideoThumbnail(video.videoUrl)
+        .then(thumbnail => {
+          setVideoThumbnails(prev => ({ ...prev, [video.id]: thumbnail }));
+        })
+        .catch(err => console.error('Error generating thumbnail:', err));
+    }
+  }, []);
 
   return (
     <div className="min-h-screen bg-background">
@@ -227,7 +241,7 @@ const Videos = () => {
               >
                 <div className="relative aspect-[9/16] overflow-hidden">
                   <img 
-                    src={video.thumbnail} 
+                    src={videoThumbnails[video.id] || video.thumbnail} 
                     alt={video.title}
                     className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
                   />
