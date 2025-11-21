@@ -39,24 +39,32 @@ const videoCategories = {
       views: "11.3k",
       thumbnail: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=800&q=80",
     },
+    {
+      id: 5,
+      title: "Sport : Actualités et opportunités d'investissement",
+      duration: "2:30",
+      views: "8.4k",
+      videoUrl: "/videos/sport-actualites.mp4",
+      thumbnail: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=800&q=80",
+    },
   ],
   tech: [
     {
-      id: 5,
+      id: 6,
       title: "IA et Machine Learning : les leaders du secteur",
       duration: "4:12",
       views: "18.7k",
       thumbnail: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80",
     },
     {
-      id: 6,
+      id: 7,
       title: "Semiconducteurs : la guerre des puces",
       duration: "3:45",
       views: "14.2k",
       thumbnail: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80",
     },
     {
-      id: 7,
+      id: 8,
       title: "Cloud Computing : investir dans l'infrastructure",
       duration: "3:30",
       views: "10.9k",
@@ -65,21 +73,21 @@ const videoCategories = {
   ],
   crypto: [
     {
-      id: 8,
+      id: 9,
       title: "Bitcoin et Ethereum : comprendre les fondamentaux",
       duration: "4:20",
       views: "22.1k",
       thumbnail: "https://images.unsplash.com/photo-1621761191319-c6fb62004040?w=800&q=80",
     },
     {
-      id: 9,
+      id: 10,
       title: "DeFi : la finance décentralisée expliquée",
       duration: "3:55",
       views: "16.4k",
       thumbnail: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&q=80",
     },
     {
-      id: 10,
+      id: 11,
       title: "NFTs et tokenisation d'actifs",
       duration: "3:15",
       views: "13.8k",
@@ -88,21 +96,21 @@ const videoCategories = {
   ],
   art: [
     {
-      id: 11,
+      id: 12,
       title: "Art contemporain : identifier les talents émergents",
       duration: "4:30",
       views: "8.9k",
       thumbnail: "https://images.unsplash.com/photo-1536924940846-227afb31e2a5?w=800&q=80",
     },
     {
-      id: 12,
+      id: 13,
       title: "Maîtres anciens : investissement de patrimoine",
       duration: "3:50",
       views: "7.2k",
       thumbnail: "https://images.unsplash.com/photo-1577083552431-6e5fd01c3898?w=800&q=80",
     },
     {
-      id: 13,
+      id: 14,
       title: "Art digital et galeries virtuelles",
       duration: "3:25",
       views: "11.5k",
@@ -111,21 +119,21 @@ const videoCategories = {
   ],
   sport: [
     {
-      id: 14,
+      id: 15,
       title: "Investir dans les franchises sportives",
       duration: "4:05",
       views: "9.6k",
       thumbnail: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=800&q=80",
     },
     {
-      id: 15,
+      id: 16,
       title: "E-sport : le nouveau terrain de jeu des investisseurs",
       duration: "3:35",
       views: "12.3k",
       thumbnail: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&q=80",
     },
     {
-      id: 16,
+      id: 17,
       title: "Équipementiers sportifs : analyse sectorielle",
       duration: "3:20",
       views: "8.1k",
@@ -134,21 +142,21 @@ const videoCategories = {
   ],
   luxury: [
     {
-      id: 17,
+      id: 18,
       title: "LVMH, Hermès, Kering : les géants du luxe",
       duration: "4:15",
       views: "15.7k",
       thumbnail: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=800&q=80",
     },
     {
-      id: 18,
+      id: 19,
       title: "Montres de collection : horlogerie et investissement",
       duration: "3:40",
       views: "10.2k",
       thumbnail: "https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=800&q=80",
     },
     {
-      id: 19,
+      id: 20,
       title: "Vins et spiritueux : patrimoine liquide",
       duration: "3:55",
       views: "7.8k",
@@ -157,21 +165,21 @@ const videoCategories = {
   ],
   immobilier: [
     {
-      id: 20,
+      id: 21,
       title: "SCPI et REIT : l'immobilier sans contrainte",
       duration: "3:50",
       views: "13.4k",
       thumbnail: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80",
     },
     {
-      id: 21,
+      id: 22,
       title: "Immobilier commercial : bureaux et retail",
       duration: "4:00",
       views: "9.7k",
       thumbnail: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80",
     },
     {
-      id: 22,
+      id: 23,
       title: "Logistique et datacenters : les nouveaux eldorados",
       duration: "3:30",
       views: "11.8k",
@@ -180,21 +188,21 @@ const videoCategories = {
   ],
   green: [
     {
-      id: 23,
+      id: 24,
       title: "Énergies renouvelables : solaire, éolien, hydrogène",
       duration: "4:25",
       views: "16.9k",
       thumbnail: "https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=800&q=80",
     },
     {
-      id: 24,
+      id: 25,
       title: "Véhicules électriques : au-delà de Tesla",
       duration: "3:45",
       views: "14.6k",
       thumbnail: "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=800&q=80",
     },
     {
-      id: 25,
+      id: 26,
       title: "Économie circulaire et gestion des déchets",
       duration: "3:20",
       views: "8.5k",
@@ -237,7 +245,7 @@ const Videos = () => {
         <div className="mb-8">
           <h2 className="text-2xl font-bold mb-4">Pour vous</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {videoCategories.introduction.slice(2, 5).map((video) => (
+            {videoCategories.introduction.slice(2, 6).map((video) => (
               <Card 
                 key={video.id} 
                 className="shadow-card hover:shadow-lg transition-all cursor-pointer group overflow-hidden border-primary/50"
