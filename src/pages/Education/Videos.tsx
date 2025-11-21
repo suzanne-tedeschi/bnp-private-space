@@ -210,6 +210,39 @@ const Videos = () => {
           </p>
         </div>
 
+        {/* Pour Vous Section */}
+        <div className="mb-8">
+          <h2 className="text-2xl font-bold mb-4">Pour vous</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {videoCategories.introduction.slice(0, 3).map((video) => (
+              <Card key={video.id} className="shadow-card hover:shadow-lg transition-all cursor-pointer group overflow-hidden border-primary/50">
+                <div className="relative aspect-video overflow-hidden">
+                  <img 
+                    src={video.thumbnail} 
+                    alt={video.title}
+                    className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/50 transition-colors">
+                    <div className="bg-primary rounded-full p-3 group-hover:scale-110 transition-transform">
+                      <Play className="h-6 w-6 text-primary-foreground fill-current" />
+                    </div>
+                  </div>
+                  <Badge className="absolute top-2 right-2 bg-black/70">
+                    <Clock className="h-3 w-3 mr-1" />
+                    {video.duration}
+                  </Badge>
+                  <Badge className="absolute top-2 left-2 bg-primary">Recommandé</Badge>
+                </div>
+                <CardHeader className="p-4">
+                  <CardTitle className="text-sm group-hover:text-primary transition-colors">
+                    {video.title}
+                  </CardTitle>
+                </CardHeader>
+              </Card>
+            ))}
+          </div>
+        </div>
+
         <Tabs defaultValue="introduction" className="w-full">
           <TabsList className="grid w-full grid-cols-4 lg:grid-cols-8 mb-8">
             <TabsTrigger value="introduction">Introduction</TabsTrigger>

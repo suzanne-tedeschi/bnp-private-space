@@ -130,6 +130,33 @@ const Articles = () => {
           ))}
         </div>
 
+        {/* Pour Vous Section */}
+        <div className="mb-8">
+          <h2 className="text-2xl font-bold mb-4">Pour vous</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {articles.slice(0, 3).map((article) => (
+              <Card key={article.id} className="shadow-card hover:shadow-lg transition-all cursor-pointer group border-primary/50">
+                <CardHeader>
+                  <div className="flex items-center justify-between mb-2">
+                    <Badge variant="secondary">{article.category}</Badge>
+                    <Badge className="bg-primary/10 text-primary">Recommandé</Badge>
+                  </div>
+                  <CardTitle className="text-base group-hover:text-primary transition-colors">
+                    {article.title}
+                  </CardTitle>
+                  <CardDescription className="flex items-center space-x-4 text-xs">
+                    <span className="flex items-center">
+                      <Clock className="h-3 w-3 mr-1" />
+                      {article.readTime}
+                    </span>
+                    <span>{article.date}</span>
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+            ))}
+          </div>
+        </div>
+
         {/* Articles Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredArticles.map((article) => (

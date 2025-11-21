@@ -137,6 +137,39 @@ const Experts = () => {
           </CardContent>
         </Card>
 
+        {/* Pour Vous Section */}
+        <div className="mb-8">
+          <h2 className="text-2xl font-bold mb-4">Pour vous</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {experts.slice(0, 3).map((expert) => (
+              <Card key={expert.id} className="shadow-card hover:shadow-lg transition-all cursor-pointer border-primary/50">
+                <CardHeader className="pb-3">
+                  <div className="flex items-start space-x-3">
+                    <Avatar className="h-14 w-14">
+                      <AvatarImage src={expert.avatar} alt={expert.name} />
+                      <AvatarFallback>{expert.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
+                    </Avatar>
+                    <div className="flex-1 min-w-0">
+                      <CardTitle className="text-base mb-1">{expert.name}</CardTitle>
+                      <Badge className="bg-primary/10 text-primary text-xs">Recommandé</Badge>
+                    </div>
+                  </div>
+                </CardHeader>
+                <CardContent className="pt-0">
+                  <p className="text-xs text-muted-foreground mb-2">{expert.specialty}</p>
+                  <div className="flex items-center space-x-2">
+                    <div className="flex items-center">
+                      <Star className="h-3 w-3 fill-yellow-400 text-yellow-400 mr-1" />
+                      <span className="text-xs font-medium">{expert.rating}</span>
+                    </div>
+                    <span className="text-xs text-muted-foreground">• {expert.experience}</span>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+
         {/* Experts List */}
         <Tabs defaultValue="all" className="w-full">
           <TabsList className="mb-6">
