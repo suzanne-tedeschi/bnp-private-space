@@ -2,7 +2,9 @@ import { Header } from "@/components/Header";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Play, Clock } from "lucide-react";
+import { useState } from "react";
 
 const videoCategories = {
   introduction: [
@@ -200,6 +202,8 @@ const videoCategories = {
 };
 
 const Videos = () => {
+  const [selectedVideo, setSelectedVideo] = useState<{ title: string; videoUrl?: string } | null>(null);
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -216,7 +220,11 @@ const Videos = () => {
           <h2 className="text-2xl font-bold mb-4">Pour vous</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {videoCategories.introduction.slice(0, 3).map((video) => (
-              <Card key={video.id} className="shadow-card hover:shadow-lg transition-all cursor-pointer group overflow-hidden border-primary/50">
+              <Card 
+                key={video.id} 
+                className="shadow-card hover:shadow-lg transition-all cursor-pointer group overflow-hidden border-primary/50"
+                onClick={() => setSelectedVideo(video)}
+              >
                 <div className="relative aspect-[9/16] overflow-hidden">
                   <img 
                     src={video.thumbnail} 
@@ -257,49 +265,73 @@ const Videos = () => {
           </TabsList>
 
           <TabsContent value="introduction">
-            <VideoGrid videos={videoCategories.introduction} categoryName="Introduction Générale" />
+            <VideoGrid videos={videoCategories.introduction} categoryName="Introduction Générale" onVideoClick={setSelectedVideo} />
           </TabsContent>
 
           <TabsContent value="tech">
-            <VideoGrid videos={videoCategories.tech} categoryName="Technologie" />
+            <VideoGrid videos={videoCategories.tech} categoryName="Technologie" onVideoClick={setSelectedVideo} />
           </TabsContent>
 
           <TabsContent value="crypto">
-            <VideoGrid videos={videoCategories.crypto} categoryName="Cryptomonnaies & Blockchain" />
+            <VideoGrid videos={videoCategories.crypto} categoryName="Cryptomonnaies & Blockchain" onVideoClick={setSelectedVideo} />
           </TabsContent>
 
           <TabsContent value="art">
-            <VideoGrid videos={videoCategories.art} categoryName="Art & Collection" />
+            <VideoGrid videos={videoCategories.art} categoryName="Art & Collection" onVideoClick={setSelectedVideo} />
           </TabsContent>
 
           <TabsContent value="sport">
-            <VideoGrid videos={videoCategories.sport} categoryName="Sport & E-sport" />
+            <VideoGrid videos={videoCategories.sport} categoryName="Sport & E-sport" onVideoClick={setSelectedVideo} />
           </TabsContent>
 
           <TabsContent value="luxury">
-            <VideoGrid videos={videoCategories.luxury} categoryName="Luxe & Passion" />
+            <VideoGrid videos={videoCategories.luxury} categoryName="Luxe & Passion" onVideoClick={setSelectedVideo} />
           </TabsContent>
 
           <TabsContent value="immobilier">
-            <VideoGrid videos={videoCategories.immobilier} categoryName="Immobilier" />
+            <VideoGrid videos={videoCategories.immobilier} categoryName="Immobilier" onVideoClick={setSelectedVideo} />
           </TabsContent>
 
           <TabsContent value="green">
-            <VideoGrid videos={videoCategories.green} categoryName="Transition Écologique" />
+            <VideoGrid videos={videoCategories.green} categoryName="Transition Écologique" onVideoClick={setSelectedVideo} />
           </TabsContent>
         </Tabs>
       </div>
+
+      <Dialog open={!!selectedVideo} onOpenChange={() => setSelectedVideo(null)}>
+        <DialogContent className="max-w-4xl">
+          {selectedVideo?.videoUrl ? (
+            <video 
+              controls 
+              autoPlay 
+              className="w-full aspect-video bg-black"
+              src={selectedVideo.videoUrl}
+            >
+              Votre navigateur ne supporte pas la lecture de vidéos.
+            </video>
+          ) : (
+            <div className="aspect-video bg-muted flex items-center justify-center">
+              <p className="text-muted-foreground">Vidéo non disponible</p>
+            </div>
+          )}
+          <h3 className="text-lg font-semibold mt-4">{selectedVideo?.title}</h3>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };
 
-const VideoGrid = ({ videos, categoryName }: { videos: any[]; categoryName: string }) => {
+const VideoGrid = ({ videos, categoryName, onVideoClick }: { videos: any[]; categoryName: string; onVideoClick: (video: any) => void }) => {
   return (
     <div>
       <h2 className="text-2xl font-bold mb-6">{categoryName}</h2>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {videos.map((video) => (
-          <Card key={video.id} className="shadow-card hover:shadow-lg transition-all cursor-pointer group overflow-hidden">
+          <Card 
+            key={video.id} 
+            className="shadow-card hover:shadow-lg transition-all cursor-pointer group overflow-hidden"
+            onClick={() => onVideoClick(video)}
+          >
             <div className="relative aspect-[9/16] overflow-hidden">
               <img 
                 src={video.thumbnail} 
