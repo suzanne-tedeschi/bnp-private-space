@@ -3,9 +3,10 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
-import { Play, Clock } from "lucide-react";
+import { Play, Clock, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState, useEffect } from "react";
 import { generateVideoThumbnail } from "@/utils/videoThumbnail";
+import { Button } from "@/components/ui/button";
 
 const videoCategories = {
   introduction: [
@@ -212,8 +213,31 @@ const videoCategories = {
 };
 
 const Videos = () => {
-  const [selectedVideo, setSelectedVideo] = useState<{ title: string; videoUrl?: string } | null>(null);
+  const [selectedVideo, setSelectedVideo] = useState<{ id: number; title: string; videoUrl?: string } | null>(null);
   const [videoThumbnails, setVideoThumbnails] = useState<Record<number, string>>({});
+
+  // Demo navigation order: sport (5) -> PEA (1) -> ETF (2)
+  const demoVideoOrder = [5, 1, 2];
+  
+  const navigateVideo = (direction: 'prev' | 'next') => {
+    if (!selectedVideo) return;
+    
+    const currentIndex = demoVideoOrder.indexOf(selectedVideo.id);
+    if (currentIndex === -1) return;
+    
+    let newIndex;
+    if (direction === 'next') {
+      newIndex = (currentIndex + 1) % demoVideoOrder.length;
+    } else {
+      newIndex = (currentIndex - 1 + demoVideoOrder.length) % demoVideoOrder.length;
+    }
+    
+    const newVideoId = demoVideoOrder[newIndex];
+    const newVideo = videoCategories.introduction.find(v => v.id === newVideoId);
+    if (newVideo) {
+      setSelectedVideo(newVideo);
+    }
+  };
 
   useEffect(() => {
     // Generate thumbnails for videos with videoUrl
@@ -341,6 +365,31 @@ const Videos = () => {
             </div>
           )}
           <h3 className="text-lg font-semibold mt-4">{selectedVideo?.title}</h3>
+          
+          {/* Navigation arrows - only show for demo videos */}
+          {selectedVideo && demoVideoOrder.includes(selectedVideo.id) && (
+            <div className="flex justify-between items-center mt-4 gap-4">
+              <Button
+                variant="outline"
+                size="icon"
+                onClick={() => navigateVideo('prev')}
+                className="hover-scale"
+              >
+                <ChevronLeft className="h-5 w-5" />
+              </Button>
+              <span className="text-sm text-muted-foreground">
+                {demoVideoOrder.indexOf(selectedVideo.id) + 1} / {demoVideoOrder.length}
+              </span>
+              <Button
+                variant="outline"
+                size="icon"
+                onClick={() => navigateVideo('next')}
+                className="hover-scale"
+              >
+                <ChevronRight className="h-5 w-5" />
+              </Button>
+            </div>
+          )}
         </DialogContent>
       </Dialog>
     </div>
