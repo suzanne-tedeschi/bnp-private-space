@@ -1,4 +1,5 @@
 import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { TrendingUp, TrendingDown, Wallet, PieChart, ArrowUpRight } from "lucide-react";
 import { 
@@ -239,6 +240,8 @@ export default function Dashboard() {
           </CardContent>
         </Card>
       </main>
+      
+      <Footer />
     </div>
   );
 }
