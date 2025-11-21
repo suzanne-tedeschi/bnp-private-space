@@ -299,18 +299,18 @@ const Videos = () => {
       </div>
 
       <Dialog open={!!selectedVideo} onOpenChange={() => setSelectedVideo(null)}>
-        <DialogContent className="max-w-4xl">
+        <DialogContent className="max-w-md">
           {selectedVideo?.videoUrl ? (
             <video 
               controls 
               autoPlay 
-              className="w-full aspect-video bg-black"
+              className="w-full aspect-[9/16] bg-black rounded-lg"
               src={selectedVideo.videoUrl}
             >
               Votre navigateur ne supporte pas la lecture de vidéos.
             </video>
           ) : (
-            <div className="aspect-video bg-muted flex items-center justify-center">
+            <div className="aspect-[9/16] bg-muted flex items-center justify-center rounded-lg">
               <p className="text-muted-foreground">Vidéo non disponible</p>
             </div>
           )}
