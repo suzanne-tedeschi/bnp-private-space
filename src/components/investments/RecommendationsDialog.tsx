@@ -29,28 +29,6 @@ const recommendations = [
     videoCategory: "immobilier",
     experts: ["Marc", "Sophie"],
   },
-  {
-    id: "private-equity",
-    sector: "Private Equity",
-    title: "Fonds Innovation Deep Tech",
-    description: "Participation dans des startups technologiques prometteuses",
-    risk: "Élevé",
-    expectedReturn: "15-25%",
-    minimumInvestment: 50000,
-    videoCategory: "tech",
-    experts: ["Pierre", "Nathalie"],
-  },
-  {
-    id: "crypto",
-    sector: "Cryptomonnaies",
-    title: "Portefeuille Crypto Diversifié",
-    description: "Bitcoin, Ethereum et altcoins sélectionnés",
-    risk: "Élevé",
-    expectedReturn: "Variable",
-    minimumInvestment: 5000,
-    videoCategory: "crypto",
-    experts: ["Laurent", "Émilie"],
-  },
 ];
 
 interface RecommendationDetailDialogProps {
