@@ -379,31 +379,31 @@ const Videos = () => {
             
             {/* Navigation arrows inside the dialog */}
             {selectedVideo && demoVideoOrder.includes(selectedVideo.id) && (
-              <div className="flex flex-col items-center gap-3 pb-4 bg-background rounded-b-lg">
+              <div className="flex flex-col items-center gap-1 py-2 bg-background rounded-b-lg">
                 <Button
                   variant="outline"
-                  size="icon"
+                  size="sm"
                   onClick={(e) => {
                     e.stopPropagation();
                     navigateVideo('prev');
                   }}
-                  className="hover-scale"
+                  className="hover-scale h-7 w-7 p-0"
                 >
-                  <ChevronUp className="h-5 w-5" />
+                  <ChevronUp className="h-3 w-3" />
                 </Button>
-                <span className="text-sm text-muted-foreground">
+                <span className="text-xs text-muted-foreground">
                   {demoVideoOrder.indexOf(selectedVideo.id) + 1} / {demoVideoOrder.length}
                 </span>
                 <Button
                   variant="outline"
-                  size="icon"
+                  size="sm"
                   onClick={(e) => {
                     e.stopPropagation();
                     navigateVideo('next');
                   }}
-                  className="hover-scale"
+                  className="hover-scale h-7 w-7 p-0"
                 >
-                  <ChevronDown className="h-5 w-5" />
+                  <ChevronDown className="h-3 w-3" />
                 </Button>
               </div>
             )}
