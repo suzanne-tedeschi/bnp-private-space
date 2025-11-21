@@ -16,7 +16,7 @@ const myClubs = [
   {
     id: 2,
     name: "European Real Estate Elite",
-    type: "Immobilier",
+    type: "Real Estate",
     members: 8,
     invested: 500000,
     performance: "+12.3%",
@@ -39,16 +39,16 @@ const availableClubs = [
     members: 10,
     seeking: 2,
     entryTicket: 75000,
-    description: "Collection exclusive de montres de prestige",
+    description: "Exclusive collection of prestige watches",
   },
   {
     id: 5,
     name: "Prime Paris Properties",
-    type: "Immobilier",
+    type: "Real Estate",
     members: 6,
     seeking: 1,
     entryTicket: 300000,
-    description: "Immobilier premium dans les arrondissements d'élite",
+    description: "Premium real estate in elite districts",
   },
   {
     id: 6,
@@ -57,7 +57,7 @@ const availableClubs = [
     members: 12,
     seeking: 3,
     entryTicket: 100000,
-    description: "Startups deep tech avec fort potentiel",
+    description: "Deep tech startups with high potential",
   },
   {
     id: 7,
@@ -66,7 +66,7 @@ const availableClubs = [
     members: 8,
     seeking: 2,
     entryTicket: 50000,
-    description: "Investissement dans les spiritueux rares et millésimés",
+    description: "Investment in rare and vintage spirits",
   },
 ];
 
@@ -74,7 +74,7 @@ const getTypeColor = (type: string) => {
   switch (type) {
     case "Art":
       return "bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200";
-    case "Immobilier":
+    case "Real Estate":
       return "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200";
     case "Private Equity":
       return "bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-200";
@@ -99,14 +99,14 @@ export default function ClubDeal() {
           <div className="relative">
             <div className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-gradient-to-r from-amber-100 to-yellow-100 border border-amber-200 mb-4">
               <Sparkles className="h-4 w-4 text-amber-600" />
-              <span className="text-sm font-medium text-amber-900">Investissements Exclusifs</span>
+              <span className="text-sm font-medium text-amber-900">Exclusive Investments</span>
             </div>
             
             <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-slate-900 via-slate-700 to-slate-900 bg-clip-text text-transparent">
               Club Deal
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Rejoignez des investisseurs d'élite pour des opportunités uniques à fort potentiel
+              Join elite investors for unique high-potential opportunities
             </p>
           </div>
         </div>
@@ -268,7 +268,7 @@ export default function ClubDeal() {
                   <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-amber-100 to-yellow-100 border-2 border-amber-300/50 shadow-lg">
                     <Sparkles className="h-4 w-4 text-amber-600" />
                     <span className="text-sm font-medium bg-gradient-to-r from-amber-700 to-yellow-700 bg-clip-text text-transparent">
-                      Opportunité Exclusive
+                      Exclusive Opportunity
                     </span>
                   </div>
                   
@@ -297,10 +297,10 @@ export default function ClubDeal() {
                       <Users className="h-6 w-6 text-white" />
                     </div>
                     <h4 className="font-semibold text-lg bg-gradient-to-r from-amber-700 to-yellow-700 bg-clip-text text-transparent">
-                      Réseau d'Élite
+                      Elite Network
                     </h4>
                     <p className="text-sm text-slate-600">
-                      Connectez-vous avec des investisseurs triés sur le volet
+                      Connect with hand-picked investors
                     </p>
                   </div>
 
@@ -309,10 +309,10 @@ export default function ClubDeal() {
                       <Target className="h-6 w-6 text-white" />
                     </div>
                     <h4 className="font-semibold text-lg bg-gradient-to-r from-amber-700 to-yellow-700 bg-clip-text text-transparent">
-                      Opportunités Uniques
+                      Unique Opportunities
                     </h4>
                     <p className="text-sm text-slate-600">
-                      Accès prioritaire à des deals exclusifs premium
+                      Priority access to exclusive premium deals
                     </p>
                   </div>
 
@@ -324,7 +324,7 @@ export default function ClubDeal() {
                       Performance
                     </h4>
                     <p className="text-sm text-slate-600">
-                      Suivez et optimisez vos investissements collectifs
+                      Track and optimize your collective investments
                     </p>
                   </div>
 
@@ -333,10 +333,10 @@ export default function ClubDeal() {
                       <Sparkles className="h-6 w-6 text-white" />
                     </div>
                     <h4 className="font-semibold text-lg bg-gradient-to-r from-amber-700 to-yellow-700 bg-clip-text text-transparent">
-                      Support Dédié
+                      Dedicated Support
                     </h4>
                     <p className="text-sm text-slate-600">
-                      Accompagnement personnalisé de nos experts
+                      Personalized guidance from our experts
                     </p>
                   </div>
                 </div>
