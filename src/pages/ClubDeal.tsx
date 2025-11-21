@@ -2,7 +2,7 @@ import { Header } from "@/components/Header";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Crown, Users, TrendingUp, Lock, Sparkles } from "lucide-react";
+import { Users, TrendingUp, Sparkles, ArrowRight, Target } from "lucide-react";
 
 const myClubs = [
   {
@@ -12,7 +12,6 @@ const myClubs = [
     members: 12,
     invested: 150000,
     performance: "+18.5%",
-    tier: "Platinum",
   },
   {
     id: 2,
@@ -21,7 +20,6 @@ const myClubs = [
     members: 8,
     invested: 500000,
     performance: "+12.3%",
-    tier: "Diamond",
   },
   {
     id: 3,
@@ -30,7 +28,6 @@ const myClubs = [
     members: 15,
     invested: 250000,
     performance: "+24.7%",
-    tier: "Gold",
   },
 ];
 
@@ -42,7 +39,6 @@ const availableClubs = [
     members: 10,
     seeking: 2,
     entryTicket: 75000,
-    tier: "Platinum",
     description: "Collection exclusive de montres de prestige",
   },
   {
@@ -52,7 +48,6 @@ const availableClubs = [
     members: 6,
     seeking: 1,
     entryTicket: 300000,
-    tier: "Diamond",
     description: "Immobilier premium dans les arrondissements d'élite",
   },
   {
@@ -62,7 +57,6 @@ const availableClubs = [
     members: 12,
     seeking: 3,
     entryTicket: 100000,
-    tier: "Gold",
     description: "Startups deep tech avec fort potentiel",
   },
   {
@@ -72,54 +66,34 @@ const availableClubs = [
     members: 8,
     seeking: 2,
     entryTicket: 50000,
-    tier: "Platinum",
     description: "Investissement dans les spiritueux rares et millésimés",
   },
 ];
 
-const getTierColor = (tier: string) => {
-  switch (tier) {
-    case "Diamond":
-      return "from-blue-400/20 to-cyan-400/20 border-cyan-400/30";
-    case "Platinum":
-      return "from-slate-400/20 to-zinc-400/20 border-slate-400/30";
-    case "Gold":
-      return "from-amber-400/20 to-yellow-400/20 border-amber-400/30";
+const getTypeColor = (type: string) => {
+  switch (type) {
+    case "Art":
+      return "bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200";
+    case "Immobilier":
+      return "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200";
+    case "Private Equity":
+      return "bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-200";
     default:
-      return "from-primary/20 to-accent/20 border-primary/30";
-  }
-};
-
-const getTierBadgeColor = (tier: string) => {
-  switch (tier) {
-    case "Diamond":
-      return "bg-gradient-to-r from-blue-400 to-cyan-400";
-    case "Platinum":
-      return "bg-gradient-to-r from-slate-300 to-zinc-300";
-    case "Gold":
-      return "bg-gradient-to-r from-amber-400 to-yellow-400";
-    default:
-      return "bg-primary";
+      return "bg-gray-100 text-gray-800";
   }
 };
 
 export default function ClubDeal() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
+    <div className="min-h-screen bg-background">
       <Header />
       
       <main className="container mx-auto px-4 py-8">
         {/* Header Section */}
-        <div className="mb-8 text-center space-y-4">
-          <div className="flex items-center justify-center gap-3">
-            <Crown className="h-10 w-10 text-amber-400" />
-            <h1 className="text-4xl font-bold bg-gradient-to-r from-amber-200 via-yellow-200 to-amber-200 bg-clip-text text-transparent" style={{ fontFamily: 'serif' }}>
-              Club Deal
-            </h1>
-            <Crown className="h-10 w-10 text-amber-400" />
-          </div>
-          <p className="text-slate-300 text-lg" style={{ fontFamily: 'serif' }}>
-            Investissements exclusifs réservés à une élite sélectionnée
+        <div className="mb-8">
+          <h1 className="text-3xl font-bold mb-2">Club Deal</h1>
+          <p className="text-muted-foreground">
+            Investissements collectifs exclusifs avec d'autres investisseurs premium
           </p>
         </div>
 
@@ -127,54 +101,50 @@ export default function ClubDeal() {
         <div className="grid lg:grid-cols-2 gap-8 mb-8">
           {/* Vos Clubs - Left Section */}
           <div className="space-y-6">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="h-1 w-12 bg-gradient-to-r from-amber-400 to-transparent" />
-              <h2 className="text-2xl font-bold text-amber-200" style={{ fontFamily: 'serif' }}>
-                Vos Clubs
-              </h2>
+            <div className="flex items-center justify-between">
+              <h2 className="text-2xl font-bold">Vos Clubs</h2>
+              <Badge variant="secondary" className="bg-primary/10 text-primary">
+                {myClubs.length} clubs actifs
+              </Badge>
             </div>
 
             <div className="space-y-4">
               {myClubs.map((club) => (
                 <Card 
                   key={club.id}
-                  className={`bg-gradient-to-br ${getTierColor(club.tier)} border-2 backdrop-blur-sm hover:scale-[1.02] transition-all duration-300 cursor-pointer`}
+                  className="shadow-card hover:shadow-lg transition-all cursor-pointer group"
                 >
                   <CardHeader>
-                    <div className="flex items-start justify-between">
+                    <div className="flex items-start justify-between mb-2">
                       <div className="flex-1">
-                        <div className="flex items-center gap-3 mb-2">
-                          <CardTitle className="text-xl text-slate-100" style={{ fontFamily: 'serif' }}>
-                            {club.name}
-                          </CardTitle>
-                          <Badge className={`${getTierBadgeColor(club.tier)} text-slate-900 border-0`}>
-                            {club.tier}
-                          </Badge>
-                        </div>
-                        <CardDescription className="text-slate-300">
+                        <CardTitle className="text-lg mb-2 group-hover:text-primary transition-colors">
+                          {club.name}
+                        </CardTitle>
+                        <Badge className={getTypeColor(club.type)}>
                           {club.type}
-                        </CardDescription>
+                        </Badge>
                       </div>
+                      <ArrowRight className="h-5 w-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
                     </div>
                   </CardHeader>
-                  <CardContent className="space-y-3">
-                    <div className="grid grid-cols-3 gap-4 text-sm">
+                  <CardContent>
+                    <div className="grid grid-cols-3 gap-4">
                       <div>
-                        <p className="text-slate-400 mb-1">Membres</p>
-                        <div className="flex items-center gap-1 text-slate-100">
-                          <Users className="h-4 w-4" />
+                        <p className="text-sm text-muted-foreground mb-1">Membres</p>
+                        <div className="flex items-center gap-1">
+                          <Users className="h-4 w-4 text-primary" />
                           <span className="font-semibold">{club.members}</span>
                         </div>
                       </div>
                       <div>
-                        <p className="text-slate-400 mb-1">Investi</p>
-                        <p className="font-semibold text-slate-100">
+                        <p className="text-sm text-muted-foreground mb-1">Investi</p>
+                        <p className="font-semibold">
                           {club.invested.toLocaleString('fr-FR')} €
                         </p>
                       </div>
                       <div>
-                        <p className="text-slate-400 mb-1">Performance</p>
-                        <div className="flex items-center gap-1 text-emerald-400">
+                        <p className="text-sm text-muted-foreground mb-1">Performance</p>
+                        <div className="flex items-center gap-1 text-primary">
                           <TrendingUp className="h-4 w-4" />
                           <span className="font-semibold">{club.performance}</span>
                         </div>
@@ -188,66 +158,59 @@ export default function ClubDeal() {
 
           {/* Rejoindre un Club - Right Section */}
           <div className="space-y-6">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="h-1 w-12 bg-gradient-to-r from-amber-400 to-transparent" />
-              <h2 className="text-2xl font-bold text-amber-200" style={{ fontFamily: 'serif' }}>
-                Rejoindre un Club
-              </h2>
+            <div className="flex items-center justify-between">
+              <h2 className="text-2xl font-bold">Rejoindre un Club</h2>
+              <Badge variant="secondary" className="bg-accent/10 text-accent">
+                {availableClubs.length} opportunités
+              </Badge>
             </div>
 
             <div className="space-y-4">
               {availableClubs.map((club) => (
                 <Card 
                   key={club.id}
-                  className={`bg-gradient-to-br ${getTierColor(club.tier)} border-2 backdrop-blur-sm hover:scale-[1.02] transition-all duration-300 cursor-pointer relative overflow-hidden group`}
+                  className="shadow-card hover:shadow-lg transition-all group"
                 >
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-amber-400/10 to-transparent rounded-full blur-3xl group-hover:scale-150 transition-transform duration-500" />
-                  
                   <CardHeader>
-                    <div className="flex items-start justify-between">
+                    <div className="flex items-start justify-between mb-2">
                       <div className="flex-1">
-                        <div className="flex items-center gap-3 mb-2">
-                          <CardTitle className="text-lg text-slate-100" style={{ fontFamily: 'serif' }}>
-                            {club.name}
-                          </CardTitle>
-                          <Badge className={`${getTierBadgeColor(club.tier)} text-slate-900 border-0`}>
-                            {club.tier}
-                          </Badge>
-                        </div>
-                        <CardDescription className="text-slate-300 text-sm mb-2">
+                        <CardTitle className="text-base mb-2">
+                          {club.name}
+                        </CardTitle>
+                        <CardDescription className="mb-2">
                           {club.description}
                         </CardDescription>
-                        <Badge variant="outline" className="text-xs border-slate-600 text-slate-300">
+                        <Badge className={getTypeColor(club.type)}>
                           {club.type}
                         </Badge>
                       </div>
                     </div>
                   </CardHeader>
                   <CardContent className="space-y-3">
-                    <div className="grid grid-cols-3 gap-3 text-sm">
+                    <div className="grid grid-cols-3 gap-3">
                       <div>
-                        <p className="text-slate-400 mb-1 text-xs">Membres</p>
-                        <div className="flex items-center gap-1 text-slate-100">
+                        <p className="text-xs text-muted-foreground mb-1">Membres</p>
+                        <div className="flex items-center gap-1">
                           <Users className="h-3 w-3" />
-                          <span className="font-semibold">{club.members}</span>
+                          <span className="font-semibold text-sm">{club.members}</span>
                         </div>
                       </div>
                       <div>
-                        <p className="text-slate-400 mb-1 text-xs">Recherche</p>
-                        <p className="font-semibold text-amber-400">{club.seeking} places</p>
+                        <p className="text-xs text-muted-foreground mb-1">Places</p>
+                        <p className="font-semibold text-sm text-primary">{club.seeking} disponibles</p>
                       </div>
                       <div>
-                        <p className="text-slate-400 mb-1 text-xs">Ticket</p>
-                        <p className="font-semibold text-slate-100 text-xs">
+                        <p className="text-xs text-muted-foreground mb-1">Ticket</p>
+                        <p className="font-semibold text-sm">
                           {club.entryTicket.toLocaleString('fr-FR')} €
                         </p>
                       </div>
                     </div>
                     <Button 
                       variant="outline" 
-                      className="w-full bg-slate-800/50 border-amber-400/30 hover:bg-amber-400/10 hover:border-amber-400 text-amber-200 transition-all"
+                      className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-all"
                     >
-                      <Lock className="h-4 w-4 mr-2" />
+                      <Target className="h-4 w-4 mr-2" />
                       Demander l'accès
                     </Button>
                   </CardContent>
@@ -258,15 +221,13 @@ export default function ClubDeal() {
         </div>
 
         {/* Become a Club Maker Button */}
-        <div className="flex justify-center pt-8">
+        <div className="flex justify-center pt-4">
           <Button 
             size="lg"
-            className="bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-500 hover:from-amber-400 hover:via-yellow-400 hover:to-amber-400 text-slate-900 font-bold text-lg px-12 py-7 rounded-xl shadow-2xl hover:shadow-amber-500/50 hover:scale-105 transition-all duration-300 border-2 border-amber-300"
-            style={{ fontFamily: 'serif' }}
+            className="bg-gradient-primary hover:opacity-90 text-lg px-8 py-6 hover:scale-105 transition-all shadow-lg"
           >
-            <Crown className="h-6 w-6 mr-3" />
+            <Sparkles className="h-5 w-5 mr-2" />
             Become a Club Maker
-            <Sparkles className="h-6 w-6 ml-3" />
           </Button>
         </div>
       </main>
