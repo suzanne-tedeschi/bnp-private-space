@@ -116,12 +116,12 @@ export default function ClubDeal() {
           {/* Vos Clubs - Left Section */}
           <div className="space-y-6">
             <div className="flex items-center justify-between mb-6">
-              <h2 className="text-2xl font-bold bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
-                Vos Clubs
-              </h2>
-              <Badge className="bg-gradient-to-r from-primary to-accent text-white border-0 shadow-lg">
-                {myClubs.length} clubs actifs
-              </Badge>
+                <h2 className="text-2xl font-bold bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
+                  Your Clubs
+                </h2>
+                <Badge className="bg-gradient-to-r from-primary to-accent text-white border-0 shadow-lg">
+                  {myClubs.length} active clubs
+                </Badge>
             </div>
 
             <div className="space-y-4">
@@ -151,7 +151,7 @@ export default function ClubDeal() {
                   <CardContent className="relative">
                     <div className="grid grid-cols-3 gap-4">
                       <div className="space-y-1">
-                        <p className="text-xs text-muted-foreground">Membres</p>
+                        <p className="text-xs text-muted-foreground">Members</p>
                         <div className="flex items-center gap-2">
                           <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center">
                             <Users className="h-4 w-4 text-primary" />
@@ -160,7 +160,7 @@ export default function ClubDeal() {
                         </div>
                       </div>
                       <div className="space-y-1">
-                        <p className="text-xs text-muted-foreground">Investi</p>
+                        <p className="text-xs text-muted-foreground">Invested</p>
                         <p className="font-bold text-lg">
                           {(club.invested / 1000).toFixed(0)}k€
                         </p>
@@ -182,12 +182,12 @@ export default function ClubDeal() {
           {/* Rejoindre un Club - Right Section */}
           <div className="space-y-6">
             <div className="flex items-center justify-between mb-6">
-              <h2 className="text-2xl font-bold bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
-                Rejoindre un Club
-              </h2>
-              <Badge className="bg-gradient-to-r from-accent to-amber-400 text-white border-0 shadow-lg">
-                {availableClubs.length} opportunités
-              </Badge>
+                <h2 className="text-2xl font-bold bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
+                  Join a Club
+                </h2>
+                <Badge className="bg-gradient-to-r from-accent to-amber-400 text-white border-0 shadow-lg">
+                  {availableClubs.length} opportunities
+                </Badge>
             </div>
 
             <div className="space-y-4">
@@ -217,16 +217,16 @@ export default function ClubDeal() {
                   <CardContent className="relative space-y-4">
                     <div className="grid grid-cols-3 gap-3">
                       <div className="space-y-1">
-                        <p className="text-xs text-muted-foreground">Membres</p>
+                        <p className="text-xs text-muted-foreground">Members</p>
                         <div className="flex items-center gap-1">
                           <Users className="h-3 w-3 text-muted-foreground" />
                           <span className="font-semibold text-sm">{club.members}</span>
                         </div>
                       </div>
                       <div className="space-y-1">
-                        <p className="text-xs text-muted-foreground">Places</p>
+                        <p className="text-xs text-muted-foreground">Spots</p>
                         <p className="font-semibold text-sm">
-                          <span className="text-primary">{club.seeking}</span> disponibles
+                          <span className="text-primary">{club.seeking}</span> available
                         </p>
                       </div>
                       <div className="space-y-1">
@@ -240,7 +240,7 @@ export default function ClubDeal() {
                       className="w-full bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-white shadow-lg group-hover:shadow-xl transition-all"
                     >
                       <Target className="h-4 w-4 mr-2" />
-                      Demander l'accès
+                      Request access
                     </Button>
                   </CardContent>
                 </Card>
@@ -274,10 +274,10 @@ export default function ClubDeal() {
                   
                   <div className="space-y-4">
                     <h3 className="text-4xl font-bold bg-gradient-to-r from-amber-700 via-yellow-600 to-amber-700 bg-clip-text text-transparent">
-                      Devenez Club Maker
+                      Become a Club Maker
                     </h3>
                     <p className="text-lg text-slate-700">
-                      Créez et gérez votre propre club d'investissement premium
+                      Create and manage your own premium investment club
                     </p>
                   </div>
 
@@ -285,7 +285,7 @@ export default function ClubDeal() {
                     size="lg"
                     className="bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-500 hover:from-amber-600 hover:via-yellow-600 hover:to-amber-600 text-white font-bold text-lg px-8 py-6 hover:scale-105 transition-all shadow-xl hover:shadow-amber-500/50 w-full sm:w-auto border-2 border-amber-400"
                   >
-                    Devenir Club Maker
+                    Become a Club Maker
                     <ArrowRight className="h-5 w-5 ml-2" />
                   </Button>
                 </div>

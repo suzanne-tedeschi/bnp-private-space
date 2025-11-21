@@ -72,8 +72,8 @@ export default function Investments() {
       <main className="container mx-auto px-4 py-8 space-y-6">
         {/* Header */}
         <div className="mb-6">
-          <h1 className="text-3xl font-bold mb-2">Investir</h1>
-          <p className="text-muted-foreground">Pilotez et optimisez votre portefeuille</p>
+          <h1 className="text-3xl font-bold mb-2">Invest</h1>
+          <p className="text-muted-foreground">Manage and optimize your portfolio</p>
         </div>
 
         {/* Section 1: Graphique combiné en pleine largeur */}
@@ -102,10 +102,10 @@ export default function Investments() {
             <div className="space-y-4">
               <div className="flex items-center gap-2">
                 <Sparkles className="h-6 w-6 text-primary" />
-                <h2 className="text-xl font-bold">Nouvelles Opportunités</h2>
+                <h2 className="text-xl font-bold">New Opportunities</h2>
               </div>
               <p className="text-sm text-muted-foreground mb-4">
-                Recommandations personnalisées pour votre profil
+                Personalized recommendations for your profile
               </p>
               <RecommendationsList 
                 onSelectRecommendation={handleSelectRecommendation}

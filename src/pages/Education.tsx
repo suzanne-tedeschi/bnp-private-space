@@ -11,9 +11,9 @@ const Education = () => {
       <Header />
       <div className="container mx-auto px-4 py-8">
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold mb-3">M'éduquer</h1>
+          <h1 className="text-4xl font-bold mb-3">Learn</h1>
           <p className="text-muted-foreground text-lg">
-            Choisissez votre format d'apprentissage préféré
+            Choose your preferred learning format
           </p>
         </div>
 
@@ -30,17 +30,17 @@ const Education = () => {
                 </div>
                 <div>
                   <CardTitle>Articles</CardTitle>
-                  <CardDescription>Guides détaillés et analyses</CardDescription>
+                  <CardDescription>Detailed guides and analysis</CardDescription>
                 </div>
               </div>
             </CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground mb-4">
-                Accédez à une bibliothèque d'articles approfondis sur les stratégies d'investissement, 
-                les tendances du marché et les analyses sectorielles.
+                Access a library of in-depth articles on investment strategies, 
+                market trends and sectoral analysis.
               </p>
               <div className="flex items-center text-sm text-primary">
-                <span>Explorer les articles</span>
+                <span>Explore articles</span>
                 <ArrowUpDown className="ml-2 h-4 w-4 rotate-90" />
               </div>
             </CardContent>
@@ -57,18 +57,18 @@ const Education = () => {
                   <Video className="h-8 w-8 text-accent" />
                 </div>
                 <div>
-                  <CardTitle>Vidéos</CardTitle>
-                  <CardDescription>Contenus courts et dynamiques</CardDescription>
+                  <CardTitle>Videos</CardTitle>
+                  <CardDescription>Short and dynamic content</CardDescription>
                 </div>
               </div>
             </CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground mb-4">
-                Découvrez des vidéos format court sur l'investissement, de l'introduction aux 
-                opportunités spécifiques par secteur (art, crypto, sport, etc.).
+                Discover short-form videos on investing, from introduction to 
+                specific opportunities by sector (art, crypto, sports, etc.).
               </p>
               <div className="flex items-center text-sm text-accent">
-                <span>Regarder les vidéos</span>
+                <span>Watch videos</span>
                 <ArrowUpDown className="ml-2 h-4 w-4 rotate-90" />
               </div>
             </CardContent>
@@ -86,17 +86,17 @@ const Education = () => {
                 </div>
                 <div>
                   <CardTitle>Podcasts</CardTitle>
-                  <CardDescription>Écoute en mobilité</CardDescription>
+                  <CardDescription>Listen on the go</CardDescription>
                 </div>
               </div>
             </CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground mb-4">
-                Restez informé lors de vos déplacements avec nos podcasts d'experts couvrant 
-                les actualités financières et les stratégies d'investissement.
+                Stay informed on your commute with our expert podcasts covering 
+                financial news and investment strategies.
               </p>
               <div className="flex items-center text-sm text-primary">
-                <span>Écouter les podcasts</span>
+                <span>Listen to podcasts</span>
                 <ArrowUpDown className="ml-2 h-4 w-4 rotate-90" />
               </div>
             </CardContent>
@@ -113,18 +113,18 @@ const Education = () => {
                   <Users className="h-8 w-8 text-accent" />
                 </div>
                 <div>
-                  <CardTitle>Discussion avec un Expert</CardTitle>
-                  <CardDescription>Accompagnement personnalisé</CardDescription>
+                  <CardTitle>Discussion with an Expert</CardTitle>
+                  <CardDescription>Personalized support</CardDescription>
                 </div>
               </div>
             </CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground mb-4">
-                Échangez directement avec nos conseillers experts pour des recommandations 
-                personnalisées et des réponses à vos questions spécifiques.
+                Connect directly with our expert advisors for personalized recommendations 
+                and answers to your specific questions.
               </p>
               <div className="flex items-center text-sm text-accent">
-                <span>Contacter un expert</span>
+                <span>Contact an expert</span>
                 <ArrowUpDown className="ml-2 h-4 w-4 rotate-90" />
               </div>
             </CardContent>

@@ -42,24 +42,24 @@ const myAdvisors = [
   {
     id: 1,
     name: "Sophie Beaumont",
-    title: "Conseillère Principale",
-    specialty: "Allocation d'Actifs",
-    experience: "15 ans",
+    title: "Senior Advisor",
+    specialty: "Asset Allocation",
+    experience: "15 years",
     rating: 4.9,
-    languages: ["Français", "Anglais"],
+    languages: ["French", "English"],
     avatar: advisorSophie,
-    description: "Experte en optimisation de portefeuille et gestion de patrimoine pour clients privés.",
+    description: "Expert in portfolio optimization and wealth management for private clients.",
     certifications: ["CFA", "CFP"],
     isMainAdvisor: true,
   },
   {
     id: 2,
     name: "Marc Durand",
-    title: "Conseiller Associé",
-    specialty: "Marchés Internationaux",
-    experience: "10 ans",
+    title: "Associate Advisor",
+    specialty: "International Markets",
+    experience: "10 years",
     rating: 4.8,
-    languages: ["Français", "Anglais", "Allemand"],
+    languages: ["French", "English", "German"],
     avatar: advisorMarc,
     description: "Spécialiste des marchés émergents et de la diversification géographique.",
     certifications: ["CFA"],
@@ -486,7 +486,7 @@ export default function PremiumExpertise() {
             <h1 className="text-3xl font-bold">Premium Expertise</h1>
             <Sparkles className="h-8 w-8 text-accent" />
           </div>
-          <p className="text-muted-foreground">Accédez à nos meilleurs conseillers et experts spécialisés</p>
+          <p className="text-muted-foreground">Access our best advisors and specialized experts</p>
         </div>
 
         {/* Mes Conseillers Référents */}
@@ -494,9 +494,9 @@ export default function PremiumExpertise() {
           <CardHeader>
             <div className="flex items-center space-x-2">
               <Award className="h-6 w-6 text-primary" />
-              <CardTitle>Vos Conseillers Référents</CardTitle>
+              <CardTitle>Your Dedicated Advisors</CardTitle>
             </div>
-            <CardDescription>Votre équipe dédiée de conseillers bancaires privés</CardDescription>
+            <CardDescription>Your dedicated team of private banking advisors</CardDescription>
           </CardHeader>
           <CardContent>
             <div className="grid md:grid-cols-2 gap-6">
@@ -504,7 +504,7 @@ export default function PremiumExpertise() {
                 <Card key={advisor.id} className="shadow-card border-primary/30 relative overflow-hidden">
                   {advisor.isMainAdvisor && (
                     <div className="absolute top-0 right-0 bg-primary text-primary-foreground text-xs font-semibold px-3 py-1 rounded-bl-lg">
-                      Conseiller Principal
+                      Main Advisor
                     </div>
                   )}
                   <CardContent className="pt-6">
@@ -570,15 +570,15 @@ export default function PremiumExpertise() {
         {/* Experts Spécialisés */}
         <Card className="shadow-card">
           <CardHeader>
-            <CardTitle>Experts Spécialisés par Domaine</CardTitle>
-            <CardDescription>Consultez nos experts selon votre besoin d'investissement</CardDescription>
+            <CardTitle>Specialized Experts by Domain</CardTitle>
+            <CardDescription>Consult our experts according to your investment needs</CardDescription>
           </CardHeader>
           <CardContent>
             <Tabs defaultValue="all" className="space-y-6">
               <TabsList className="grid w-full grid-cols-4 lg:grid-cols-7">
-                <TabsTrigger value="all">Tous</TabsTrigger>
+                <TabsTrigger value="all">All</TabsTrigger>
                 <TabsTrigger value="allocation">Allocation</TabsTrigger>
-                <TabsTrigger value="alternatif">Alternatif</TabsTrigger>
+                <TabsTrigger value="alternatif">Alternative</TabsTrigger>
                 <TabsTrigger value="esg">ESG</TabsTrigger>
                 <TabsTrigger value="immobilier">Immobilier</TabsTrigger>
                 <TabsTrigger value="crypto">Crypto</TabsTrigger>
