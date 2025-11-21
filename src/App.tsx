@@ -15,6 +15,7 @@ import Articles from "./pages/Education/Articles";
 import Videos from "./pages/Education/Videos";
 import Podcasts from "./pages/Education/Podcasts";
 import Experts from "./pages/Education/Experts";
+import ClubDeal from "./pages/ClubDeal";
 
 const queryClient = new QueryClient();
 
@@ -29,6 +30,7 @@ const App = () => (
           <Route path="/onboarding" element={<Onboarding />} />
           <Route path="/dashboard" element={<Layout><Dashboard /></Layout>} />
           <Route path="/investments" element={<Layout><Investments /></Layout>} />
+          <Route path="/club-deal" element={<Layout><ClubDeal /></Layout>} />
           <Route path="/premium-expertise" element={<Layout><PremiumExpertise /></Layout>} />
           <Route path="/assistant" element={<Layout><Assistant /></Layout>} />
           <Route path="/education" element={<Layout><Education /></Layout>} />

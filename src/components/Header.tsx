@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 const navigation = [
   { name: "Piloter", href: "/dashboard" },
   { name: "Investir", href: "/investments" },
+  { name: "Club Deal", href: "/club-deal" },
   { name: "Consulter mes Experts", href: "/premium-expertise" },
   { name: "M'éduquer", href: "/education" },
 ];
