@@ -9,6 +9,10 @@ import Investments from "./pages/Investments";
 import Diversify from "./pages/Diversify";
 import Assistant from "./pages/Assistant";
 import NotFound from "./pages/NotFound";
+import Articles from "./pages/Education/Articles";
+import Videos from "./pages/Education/Videos";
+import Podcasts from "./pages/Education/Podcasts";
+import Experts from "./pages/Education/Experts";
 
 const queryClient = new QueryClient();
 
@@ -25,6 +29,10 @@ const App = () => (
           <Route path="/investments" element={<Investments />} />
           <Route path="/diversify" element={<Diversify />} />
           <Route path="/assistant" element={<Assistant />} />
+          <Route path="/education/articles" element={<Articles />} />
+          <Route path="/education/videos" element={<Videos />} />
+          <Route path="/education/podcasts" element={<Podcasts />} />
+          <Route path="/education/experts" element={<Experts />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

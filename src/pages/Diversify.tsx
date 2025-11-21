@@ -1,10 +1,11 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { TrendingUp, AlertCircle, Target, Sparkles, Search, Filter, ArrowUpDown } from "lucide-react";
+import { TrendingUp, AlertCircle, Target, Sparkles, Search, Filter, ArrowUpDown, BookOpen, Video, Headphones, Users } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { 
@@ -202,6 +203,7 @@ const allInvestments = [
 ];
 
 export default function Diversify() {
+  const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedRisk, setSelectedRisk] = useState("all");
   const [selectedRegion, setSelectedRegion] = useState("all");
@@ -225,7 +227,7 @@ export default function Diversify() {
         </div>
 
         <Tabs defaultValue="recommendations" className="space-y-6">
-          <TabsList className="grid w-full max-w-md grid-cols-2">
+          <TabsList className="grid w-full max-w-2xl grid-cols-3">
             <TabsTrigger value="recommendations" className="flex items-center space-x-2">
               <Sparkles className="h-4 w-4" />
               <span>Recommandations Expert</span>
@@ -233,6 +235,10 @@ export default function Diversify() {
             <TabsTrigger value="diy" className="flex items-center space-x-2">
               <Search className="h-4 w-4" />
               <span>Faire moi-même</span>
+            </TabsTrigger>
+            <TabsTrigger value="education" className="flex items-center space-x-2">
+              <BookOpen className="h-4 w-4" />
+              <span>M'éduquer</span>
             </TabsTrigger>
           </TabsList>
 
@@ -540,6 +546,130 @@ export default function Diversify() {
                 )}
               </CardContent>
             </Card>
+          </TabsContent>
+
+          {/* M'éduquer Tab */}
+          <TabsContent value="education" className="space-y-6">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl font-bold mb-3">Choisissez votre format d'apprentissage</h2>
+              <p className="text-muted-foreground">
+                Développez vos connaissances en investissement selon vos préférences
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              {/* Articles */}
+              <Card 
+                className="shadow-card cursor-pointer hover:shadow-lg transition-all hover:-translate-y-1"
+                onClick={() => navigate('/education/articles')}
+              >
+                <CardHeader>
+                  <div className="flex items-center space-x-4">
+                    <div className="p-3 rounded-lg bg-primary/10">
+                      <BookOpen className="h-8 w-8 text-primary" />
+                    </div>
+                    <div>
+                      <CardTitle>Articles</CardTitle>
+                      <CardDescription>Guides détaillés et analyses</CardDescription>
+                    </div>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    Accédez à une bibliothèque d'articles approfondis sur les stratégies d'investissement, 
+                    les tendances du marché et les analyses sectorielles.
+                  </p>
+                  <div className="flex items-center text-sm text-primary">
+                    <span>Explorer les articles</span>
+                    <ArrowUpDown className="ml-2 h-4 w-4 rotate-90" />
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Vidéos */}
+              <Card 
+                className="shadow-card cursor-pointer hover:shadow-lg transition-all hover:-translate-y-1"
+                onClick={() => navigate('/education/videos')}
+              >
+                <CardHeader>
+                  <div className="flex items-center space-x-4">
+                    <div className="p-3 rounded-lg bg-accent/20">
+                      <Video className="h-8 w-8 text-accent" />
+                    </div>
+                    <div>
+                      <CardTitle>Vidéos</CardTitle>
+                      <CardDescription>Contenus courts et dynamiques</CardDescription>
+                    </div>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    Découvrez des vidéos format court sur l'investissement, de l'introduction aux 
+                    opportunités spécifiques par secteur (art, crypto, sport, etc.).
+                  </p>
+                  <div className="flex items-center text-sm text-accent">
+                    <span>Regarder les vidéos</span>
+                    <ArrowUpDown className="ml-2 h-4 w-4 rotate-90" />
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Podcasts */}
+              <Card 
+                className="shadow-card cursor-pointer hover:shadow-lg transition-all hover:-translate-y-1"
+                onClick={() => navigate('/education/podcasts')}
+              >
+                <CardHeader>
+                  <div className="flex items-center space-x-4">
+                    <div className="p-3 rounded-lg bg-primary/10">
+                      <Headphones className="h-8 w-8 text-primary" />
+                    </div>
+                    <div>
+                      <CardTitle>Podcasts</CardTitle>
+                      <CardDescription>Écoute en mobilité</CardDescription>
+                    </div>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    Restez informé lors de vos déplacements avec nos podcasts d'experts couvrant 
+                    les actualités financières et les stratégies d'investissement.
+                  </p>
+                  <div className="flex items-center text-sm text-primary">
+                    <span>Écouter les podcasts</span>
+                    <ArrowUpDown className="ml-2 h-4 w-4 rotate-90" />
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Discussion Expert */}
+              <Card 
+                className="shadow-card cursor-pointer hover:shadow-lg transition-all hover:-translate-y-1"
+                onClick={() => navigate('/education/experts')}
+              >
+                <CardHeader>
+                  <div className="flex items-center space-x-4">
+                    <div className="p-3 rounded-lg bg-accent/20">
+                      <Users className="h-8 w-8 text-accent" />
+                    </div>
+                    <div>
+                      <CardTitle>Discussion avec un Expert</CardTitle>
+                      <CardDescription>Accompagnement personnalisé</CardDescription>
+                    </div>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    Échangez directement avec nos conseillers experts pour des recommandations 
+                    personnalisées et des réponses à vos questions spécifiques.
+                  </p>
+                  <div className="flex items-center text-sm text-accent">
+                    <span>Contacter un expert</span>
+                    <ArrowUpDown className="ml-2 h-4 w-4 rotate-90" />
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
           </TabsContent>
         </Tabs>
       </main>
