@@ -349,52 +349,62 @@ const Videos = () => {
       </div>
 
       <Dialog open={!!selectedVideo} onOpenChange={() => setSelectedVideo(null)} modal={false}>
-        <DialogContent className="max-w-sm p-0 gap-0 border-0">
+        <DialogContent 
+          className="max-w-sm p-0 gap-0 border-0"
+          onInteractOutside={(e) => e.preventDefault()}
+          onEscapeKeyDown={(e) => e.preventDefault()}
+        >
           <div className="relative">
             {selectedVideo?.videoUrl ? (
               <video 
                 controls 
                 autoPlay 
-                className="w-full aspect-[9/16] bg-black rounded-lg"
+                className="w-full aspect-[9/16] bg-black rounded-t-lg"
                 src={selectedVideo.videoUrl}
               >
                 Votre navigateur ne supporte pas la lecture de vidéos.
               </video>
             ) : (
-              <div className="aspect-[9/16] bg-muted flex items-center justify-center rounded-lg">
+              <div className="aspect-[9/16] bg-muted flex items-center justify-center rounded-t-lg">
                 <p className="text-muted-foreground">Vidéo non disponible</p>
               </div>
             )}
             <div className="p-4 bg-background">
               <h3 className="text-lg font-semibold">{selectedVideo?.title}</h3>
             </div>
+            
+            {/* Navigation arrows inside the dialog */}
+            {selectedVideo && demoVideoOrder.includes(selectedVideo.id) && (
+              <div className="flex flex-col items-center gap-3 pb-4 bg-background rounded-b-lg">
+                <Button
+                  variant="outline"
+                  size="icon"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    navigateVideo('prev');
+                  }}
+                  className="hover-scale"
+                >
+                  <ChevronUp className="h-5 w-5" />
+                </Button>
+                <span className="text-sm text-muted-foreground">
+                  {demoVideoOrder.indexOf(selectedVideo.id) + 1} / {demoVideoOrder.length}
+                </span>
+                <Button
+                  variant="outline"
+                  size="icon"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    navigateVideo('next');
+                  }}
+                  className="hover-scale"
+                >
+                  <ChevronDown className="h-5 w-5" />
+                </Button>
+              </div>
+            )}
           </div>
         </DialogContent>
-        
-        {/* Navigation arrows outside the dialog */}
-        {selectedVideo && demoVideoOrder.includes(selectedVideo.id) && (
-          <div className="fixed left-1/2 -translate-x-1/2 bottom-8 flex flex-col items-center gap-3 z-[60]">
-            <Button
-              variant="outline"
-              size="icon"
-              onClick={() => navigateVideo('prev')}
-              className="hover-scale bg-background shadow-lg"
-            >
-              <ChevronUp className="h-5 w-5" />
-            </Button>
-            <span className="text-sm text-muted-foreground bg-background px-3 py-1 rounded-full shadow-lg">
-              {demoVideoOrder.indexOf(selectedVideo.id) + 1} / {demoVideoOrder.length}
-            </span>
-            <Button
-              variant="outline"
-              size="icon"
-              onClick={() => navigateVideo('next')}
-              className="hover-scale bg-background shadow-lg"
-            >
-              <ChevronDown className="h-5 w-5" />
-            </Button>
-          </div>
-        )}
       </Dialog>
     </div>
   );
