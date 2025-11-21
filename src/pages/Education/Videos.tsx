@@ -8,9 +8,10 @@ const videoCategories = {
   introduction: [
     {
       id: 1,
-      title: "Débuter en investissement : les bases essentielles",
+      title: "Les intérêts d'un PEA",
       duration: "3:24",
       views: "12.5k",
+      videoUrl: "/videos/pea-interets.mp4",
       thumbnail: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
     },
     {
