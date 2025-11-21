@@ -30,7 +30,7 @@ export const ChatSidebar = ({ isOpen, setIsOpen }: ChatSidebarProps) => {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: 1,
-      content: "Bonjour ! 👋 Je suis votre assistant d'exploration financière personnalisé. Je peux vous aider à analyser votre portefeuille, découvrir de nouvelles opportunités d'investissement, ou répondre à vos questions. Comment puis-je vous accompagner aujourd'hui ?",
+      content: "Bonjour ! 👋 Comment puis-je vous accompagner aujourd'hui ?",
       sender: "assistant",
       timestamp: new Date(),
       suggestions: [
