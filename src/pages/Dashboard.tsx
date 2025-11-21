@@ -55,8 +55,8 @@ export default function Dashboard() {
       
       <main className="container mx-auto px-4 py-8">
         <div className="mb-8">
-          <h1 className="text-3xl font-bold mb-2">Vue d'ensemble</h1>
-          <p className="text-muted-foreground">Bienvenue, voici votre situation patrimoniale</p>
+          <h1 className="text-3xl font-bold mb-2">Bonjour Marc</h1>
+          <p className="text-muted-foreground">Voici votre situation patrimoniale</p>
         </div>
 
         {/* Key Metrics */}
