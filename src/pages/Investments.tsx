@@ -93,19 +93,19 @@ export default function Investments() {
         </div>
 
         {/* Section 3: Radar + Recommandations */}
-        <div className="grid lg:grid-cols-5 gap-6">
+        <div className="grid lg:grid-cols-3 gap-6">
           <div className="lg:col-span-2">
             <DiversificationRadar selectedRecommendation={selectedRecommendation} />
           </div>
           
-          <div className="lg:col-span-3">
+          <div className="lg:col-span-1">
             <div className="space-y-4">
               <div className="flex items-center gap-2">
                 <Sparkles className="h-6 w-6 text-primary" />
-                <h2 className="text-2xl font-bold">Nouvelles Opportunités</h2>
+                <h2 className="text-xl font-bold">Nouvelles Opportunités</h2>
               </div>
-              <p className="text-muted-foreground mb-4">
-                Recommandations personnalisées basées sur votre profil et vos investissements actuels
+              <p className="text-sm text-muted-foreground mb-4">
+                Recommandations personnalisées pour votre profil
               </p>
               <RecommendationsList 
                 onSelectRecommendation={handleSelectRecommendation}
