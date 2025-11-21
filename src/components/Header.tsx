@@ -4,9 +4,9 @@ import { MessageSquare, User } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navigation = [
-  { name: "Accueil", href: "/dashboard" },
-  { name: "Investissements", href: "/investments" },
-  { name: "Premium Expertise", href: "/premium-expertise" },
+  { name: "Découvrir", href: "/dashboard" },
+  { name: "Investir", href: "/investments" },
+  { name: "Consulter mes Experts", href: "/premium-expertise" },
   { name: "M'éduquer", href: "/education" },
 ];
 
