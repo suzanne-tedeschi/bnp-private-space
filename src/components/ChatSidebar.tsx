@@ -209,23 +209,6 @@ export const ChatSidebar = ({ isOpen, setIsOpen }: ChatSidebarProps) => {
                     <p className="whitespace-pre-wrap leading-relaxed">{message.content}</p>
                   </div>
 
-                  {/* Suggestion Chips */}
-                  {message.suggestions && message.sender === "assistant" && (
-                    <div className="flex flex-wrap gap-2 mt-1 animate-fade-in" style={{ animationDelay: "0.3s" }}>
-                      {message.suggestions.map((suggestion, i) => (
-                        <Button
-                          key={i}
-                          variant="outline"
-                          size="sm"
-                          className="rounded-full text-xs h-7 hover:bg-primary hover:text-primary-foreground transition-all"
-                          onClick={() => handleSend(suggestion)}
-                        >
-                          {suggestion}
-                        </Button>
-                      ))}
-                    </div>
-                  )}
-
                   <p className="text-xs text-muted-foreground px-1">
                     {message.timestamp.toLocaleTimeString("fr-FR", {
                       hour: "2-digit",
