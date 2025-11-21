@@ -7,7 +7,7 @@ import { Layout } from "@/components/Layout";
 import Onboarding from "./pages/Onboarding";
 import Dashboard from "./pages/Dashboard";
 import Investments from "./pages/Investments";
-import Diversify from "./pages/Diversify";
+import PremiumExpertise from "./pages/PremiumExpertise";
 import Assistant from "./pages/Assistant";
 import NotFound from "./pages/NotFound";
 import Education from "./pages/Education";
@@ -29,7 +29,7 @@ const App = () => (
           <Route path="/onboarding" element={<Onboarding />} />
           <Route path="/dashboard" element={<Layout><Dashboard /></Layout>} />
           <Route path="/investments" element={<Layout><Investments /></Layout>} />
-          <Route path="/diversify" element={<Layout><Diversify /></Layout>} />
+          <Route path="/premium-expertise" element={<Layout><PremiumExpertise /></Layout>} />
           <Route path="/assistant" element={<Layout><Assistant /></Layout>} />
           <Route path="/education" element={<Layout><Education /></Layout>} />
           <Route path="/education/articles" element={<Layout><Articles /></Layout>} />
