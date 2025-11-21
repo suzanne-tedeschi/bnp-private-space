@@ -1,11 +1,10 @@
 import { useState } from "react";
 import { Header } from "@/components/Header";
-import { Button } from "@/components/ui/button";
 import { Sparkles } from "lucide-react";
 import { CombinedChart } from "@/components/investments/CombinedChart";
 import { InvestmentMiniChart } from "@/components/investments/InvestmentMiniChart";
 import { DiversificationRadar } from "@/components/investments/DiversificationRadar";
-import { RecommendationsDialog } from "@/components/investments/RecommendationsDialog";
+import { RecommendationsList, RecommendationDetailDialog } from "@/components/investments/RecommendationsDialog";
 import { InvestmentWrapped } from "@/components/investments/InvestmentWrapped";
 
 // Données des investissements
@@ -53,11 +52,17 @@ const investments = [
 ];
 
 export default function Investments() {
-  const [dialogOpen, setDialogOpen] = useState(false);
+  const [detailDialogOpen, setDetailDialogOpen] = useState(false);
   const [selectedRecommendation, setSelectedRecommendation] = useState<string | undefined>();
+  const [currentRecommendation, setCurrentRecommendation] = useState<any>(null);
 
   const handleSelectRecommendation = (sectorId: string) => {
     setSelectedRecommendation(sectorId);
+  };
+
+  const handleOpenDetail = (rec: any) => {
+    setCurrentRecommendation(rec);
+    setDetailDialogOpen(true);
   };
 
   return (
@@ -87,28 +92,25 @@ export default function Investments() {
           ))}
         </div>
 
-        {/* Section 3: Radar + Bouton recommandations côte à côte */}
+        {/* Section 3: Radar + Recommandations */}
         <div className="grid lg:grid-cols-5 gap-6">
-          <div className="lg:col-span-3">
+          <div className="lg:col-span-2">
             <DiversificationRadar selectedRecommendation={selectedRecommendation} />
           </div>
           
-          <div className="lg:col-span-2 flex items-center justify-center">
-            <div className="w-full space-y-4">
-              <div className="text-center space-y-2">
-                <h3 className="text-xl font-bold">Prêt à diversifier ?</h3>
-                <p className="text-sm text-muted-foreground">
-                  Découvrez des opportunités personnalisées adaptées à votre profil
-                </p>
+          <div className="lg:col-span-3">
+            <div className="space-y-4">
+              <div className="flex items-center gap-2">
+                <Sparkles className="h-6 w-6 text-primary" />
+                <h2 className="text-2xl font-bold">Nouvelles Opportunités</h2>
               </div>
-              <Button
-                size="lg"
-                className="w-full bg-gradient-primary text-lg py-6 hover:scale-105 transition-transform"
-                onClick={() => setDialogOpen(true)}
-              >
-                <Sparkles className="h-5 w-5 mr-2" />
-                Nouvelles Opportunités
-              </Button>
+              <p className="text-muted-foreground mb-4">
+                Recommandations personnalisées basées sur votre profil et vos investissements actuels
+              </p>
+              <RecommendationsList 
+                onSelectRecommendation={handleSelectRecommendation}
+                onOpenDetail={handleOpenDetail}
+              />
             </div>
           </div>
         </div>
@@ -119,11 +121,11 @@ export default function Investments() {
         </div>
       </main>
 
-      {/* Dialog de recommandations */}
-      <RecommendationsDialog
-        open={dialogOpen}
-        onOpenChange={setDialogOpen}
-        onSelectRecommendation={handleSelectRecommendation}
+      {/* Dialog de détail */}
+      <RecommendationDetailDialog
+        open={detailDialogOpen}
+        onOpenChange={setDetailDialogOpen}
+        recommendation={currentRecommendation}
       />
     </div>
   );
