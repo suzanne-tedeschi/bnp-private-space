@@ -354,8 +354,8 @@ const Videos = () => {
       <Dialog open={!!selectedVideo} onOpenChange={() => setSelectedVideo(null)} modal={false}>
         <DialogContent 
           className={cn(
-            "max-w-xs p-0 gap-0 border-0 transition-all duration-300",
-            isChatOpen && "right-96 left-auto translate-x-0"
+            "max-w-xs p-0 gap-0 border-0 transition-all duration-300 left-1/2 -translate-x-1/2",
+            isChatOpen && "!left-[calc(50%-12rem)]"
           )}
         >
           <div className="relative">
