@@ -4,10 +4,11 @@ import { MessageSquare, User } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navigation = [
-  { name: "Invest", href: "/investments" },
+  { name: "Manage my assets", href: "/dashboard" },
+  { name: "Invest my savings", href: "/investments" },
   { name: "Consult my Experts", href: "/premium-expertise" },
-  { name: "Learn", href: "/education" },
-  { name: "Club Deal", href: "/club-deal" },
+  { name: "Learn how to invest", href: "/education" },
+  { name: "Join a club deal", href: "/club-deal" },
 ];
 
 export const Header = () => {
