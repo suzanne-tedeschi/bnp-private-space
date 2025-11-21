@@ -279,7 +279,7 @@ const Videos = () => {
           </TabsList>
 
           <TabsContent value="introduction">
-            <VideoGrid videos={videoCategories.introduction} categoryName="Introduction Générale" onVideoClick={setSelectedVideo} />
+            <VideoGrid videos={videoCategories.introduction} categoryName="Introduction Générale" onVideoClick={setSelectedVideo} videoThumbnails={videoThumbnails} />
           </TabsContent>
 
           <TabsContent value="tech">
@@ -335,7 +335,7 @@ const Videos = () => {
   );
 };
 
-const VideoGrid = ({ videos, categoryName, onVideoClick }: { videos: any[]; categoryName: string; onVideoClick: (video: any) => void }) => {
+const VideoGrid = ({ videos, categoryName, onVideoClick, videoThumbnails = {} }: { videos: any[]; categoryName: string; onVideoClick: (video: any) => void; videoThumbnails?: Record<number, string> }) => {
   return (
     <div>
       <h2 className="text-2xl font-bold mb-6">{categoryName}</h2>
@@ -348,7 +348,7 @@ const VideoGrid = ({ videos, categoryName, onVideoClick }: { videos: any[]; cate
           >
             <div className="relative aspect-[9/16] overflow-hidden">
               <img 
-                src={video.thumbnail} 
+                src={videoThumbnails[video.id] || video.thumbnail} 
                 alt={video.title}
                 className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
               />
