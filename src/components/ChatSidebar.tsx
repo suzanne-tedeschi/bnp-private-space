@@ -109,7 +109,7 @@ export const ChatSidebar = ({ isOpen, setIsOpen }: ChatSidebarProps) => {
     <>
       {/* Toggle Button - Visible when closed */}
       {!isOpen && (
-        <div className="fixed right-4 bottom-4 z-50 animate-bounce">
+        <div className="fixed right-4 bottom-4 z-50">
           <div className="relative">
             {/* Pulsing glow effect */}
             <div className="absolute inset-0 rounded-full bg-primary/30 blur-xl animate-pulse" />

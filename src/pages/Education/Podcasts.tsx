@@ -155,6 +155,37 @@ const Podcasts = () => {
           </div>
         </Card>
 
+        {/* Pour Vous Section */}
+        <div className="mb-8">
+          <h2 className="text-2xl font-bold mb-4">Pour vous</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {podcasts.slice(1, 4).map((podcast) => (
+              <Card key={podcast.id} className="shadow-card hover:shadow-lg transition-all cursor-pointer border-primary/50">
+                <CardContent className="p-4">
+                  <div className="flex items-start space-x-3 mb-3">
+                    <div className="relative w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
+                      <img src={podcast.thumbnail} alt={podcast.title} className="object-cover w-full h-full" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <Badge variant="secondary" className="mb-1">{podcast.category}</Badge>
+                      <Badge className="ml-1 bg-primary/10 text-primary text-xs">Recommandé</Badge>
+                    </div>
+                  </div>
+                  <h3 className="text-sm font-semibold mb-2 line-clamp-2">{podcast.title}</h3>
+                  <div className="flex items-center space-x-2 text-xs text-muted-foreground">
+                    <span>{podcast.host}</span>
+                    <span>•</span>
+                    <span className="flex items-center">
+                      <Clock className="h-3 w-3 mr-1" />
+                      {podcast.duration}
+                    </span>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+
         {/* All Episodes */}
         <div className="mb-6">
           <h2 className="text-2xl font-bold mb-4">Tous les épisodes</h2>
