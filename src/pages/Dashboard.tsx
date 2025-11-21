@@ -33,9 +33,9 @@ const portfolioData = [
 
 const allocationData = [
   { name: "Actions", value: 45, color: "hsl(156 100% 29%)" },
-  { name: "Obligations", value: 25, color: "hsl(45 100% 55%)" },
-  { name: "Immobilier", value: 20, color: "hsl(220 70% 50%)" },
-  { name: "Liquidités", value: 10, color: "hsl(0 0% 60%)" },
+  { name: "Obligations", value: 25, color: "hsl(75 100% 60%)" },
+  { name: "Immobilier", value: 20, color: "hsl(156 80% 45%)" },
+  { name: "Liquidités", value: 10, color: "hsl(156 50% 60%)" },
 ];
 
 const accounts = [
