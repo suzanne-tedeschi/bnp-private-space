@@ -27,7 +27,7 @@ const videoCategories = {
     },
     {
       id: 3,
-      title: "Actions vs Obligations : quelle différence ?",
+      title: "Comprendre les bases de l'investissement",
       duration: "3:10",
       views: "15.2k",
       thumbnail: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=800&q=80",
