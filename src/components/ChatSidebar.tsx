@@ -15,10 +15,10 @@ interface Message {
 }
 
 const quickActions = [
-  { icon: TrendingUp, label: "Analyser mon portefeuille", prompt: "Peux-tu analyser la performance de mon portefeuille ?" },
-  { icon: PieChart, label: "Suggestions de diversification", prompt: "Quelles opportunités pour diversifier mon portefeuille ?" },
-  { icon: BookOpen, label: "M'éduquer", prompt: "Recommande-moi des ressources pour améliorer mes connaissances" },
-  { icon: Sparkles, label: "Optimiser mes impôts", prompt: "Comment puis-je optimiser ma situation fiscale ?" },
+  { icon: TrendingUp, label: "Analyze my portfolio", prompt: "Can you analyze my portfolio performance?" },
+  { icon: PieChart, label: "Diversification suggestions", prompt: "What opportunities to diversify my portfolio?" },
+  { icon: BookOpen, label: "Learn", prompt: "Recommend me resources to improve my knowledge" },
+  { icon: Sparkles, label: "Optimize my taxes", prompt: "How can I optimize my tax situation?" },
 ];
 
 interface ChatSidebarProps {
@@ -30,13 +30,13 @@ export const ChatSidebar = ({ isOpen, setIsOpen }: ChatSidebarProps) => {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: 1,
-      content: "Bonjour ! 👋 Comment puis-je vous accompagner aujourd'hui ?",
+      content: "Hello! 👋 How can I assist you today?",
       sender: "assistant",
       timestamp: new Date(),
       suggestions: [
-        "Analyser mon portefeuille",
-        "Opportunités d'investissement",
-        "Optimiser mes impôts",
+        "Analyze my portfolio",
+        "Investment opportunities",
+        "Optimize my taxes",
       ],
     },
   ]);
@@ -73,10 +73,10 @@ export const ChatSidebar = ({ isOpen, setIsOpen }: ChatSidebarProps) => {
       setIsTyping(false);
       const assistantMessage: Message = {
         id: messages.length + 2,
-        content: "PEA signifie Plan d'Épargne en Actions. C'est un dispositif qui permet d'investir en actions européennes avec une fiscalité avantageuse après cinq ans. Souhaites-tu que je développe ?",
+        content: "PEA stands for Plan d'Épargne en Actions (Equity Savings Plan). It's a scheme that allows you to invest in European stocks with favorable tax treatment after five years. Would you like me to explain further?",
         sender: "assistant",
         timestamp: new Date(),
-        suggestions: ["Oui, développe", "Voir les PEA disponibles", "Comparer avec assurance-vie"],
+        suggestions: ["Yes, explain more", "See available PEAs", "Compare with life insurance"],
       };
       setMessages((prev) => [...prev, assistantMessage]);
     }, 1500);
@@ -149,7 +149,7 @@ export const ChatSidebar = ({ isOpen, setIsOpen }: ChatSidebarProps) => {
               </h2>
               <p className="text-xs text-muted-foreground flex items-center gap-1">
                 <span className="h-1.5 w-1.5 rounded-full bg-accent animate-pulse" />
-                En ligne • Réponse instantanée
+                Online • Instant response
               </p>
             </div>
           </div>
@@ -161,7 +161,7 @@ export const ChatSidebar = ({ isOpen, setIsOpen }: ChatSidebarProps) => {
             {/* Quick Actions - Show at start */}
             {showQuickActions && messages.length === 1 && (
               <div className="space-y-3 animate-fade-in">
-                <p className="text-xs text-muted-foreground text-center mb-3">Actions rapides</p>
+                <p className="text-xs text-muted-foreground text-center mb-3">Quick actions</p>
                 <div className="grid grid-cols-2 gap-2">
                   {quickActions.map((action, idx) => (
                     <Button
@@ -239,7 +239,7 @@ export const ChatSidebar = ({ isOpen, setIsOpen }: ChatSidebarProps) => {
           <div className="relative">
             <Input
               ref={inputRef}
-              placeholder="Posez-moi une question..."
+              placeholder="Ask me a question..."
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
               onKeyPress={handleKeyPress}
@@ -262,10 +262,10 @@ export const ChatSidebar = ({ isOpen, setIsOpen }: ChatSidebarProps) => {
           <div className="flex items-center justify-between mt-2 px-1">
             <p className="text-xs text-muted-foreground flex items-center gap-1">
               <Zap className="h-3 w-3" />
-              Propulsé par IA
+              Powered by AI
             </p>
             <p className="text-xs text-muted-foreground">
-              Entrée pour envoyer
+              Enter to send
             </p>
           </div>
         </div>

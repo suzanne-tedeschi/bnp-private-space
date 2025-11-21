@@ -19,31 +19,31 @@ import {
 
 const portfolioData = [
   { month: "Jan", value: 320000 },
-  { month: "Fév", value: 335000 },
+  { month: "Feb", value: 335000 },
   { month: "Mar", value: 342000 },
-  { month: "Avr", value: 355000 },
-  { month: "Mai", value: 348000 },
+  { month: "Apr", value: 355000 },
+  { month: "May", value: 348000 },
   { month: "Jun", value: 365000 },
   { month: "Jul", value: 378000 },
-  { month: "Aoû", value: 385000 },
+  { month: "Aug", value: 385000 },
   { month: "Sep", value: 392000 },
   { month: "Oct", value: 405000 },
   { month: "Nov", value: 418000 },
-  { month: "Déc", value: 432000 },
+  { month: "Dec", value: 432000 },
 ];
 
 const allocationData = [
-  { name: "Actions", value: 45, color: "hsl(156 100% 29%)" },
-  { name: "Obligations", value: 25, color: "hsl(75 100% 60%)" },
-  { name: "Immobilier", value: 20, color: "hsl(156 80% 45%)" },
-  { name: "Liquidités", value: 10, color: "hsl(156 50% 60%)" },
+  { name: "Stocks", value: 45, color: "hsl(156 100% 29%)" },
+  { name: "Bonds", value: 25, color: "hsl(75 100% 60%)" },
+  { name: "Real Estate", value: 20, color: "hsl(156 80% 45%)" },
+  { name: "Cash", value: 10, color: "hsl(156 50% 60%)" },
 ];
 
 const accounts = [
-  { name: "Compte Courant", balance: 45230, change: 2.3, type: "checking" },
-  { name: "Compte Épargne", balance: 128450, change: 5.8, type: "savings" },
+  { name: "Checking Account", balance: 45230, change: 2.3, type: "checking" },
+  { name: "Savings Account", balance: 128450, change: 5.8, type: "savings" },
   { name: "PEA", balance: 165800, change: 8.2, type: "investment" },
-  { name: "Assurance Vie", balance: 92520, change: 4.1, type: "insurance" },
+  { name: "Life Insurance", balance: 92520, change: 4.1, type: "insurance" },
 ];
 
 export default function Dashboard() {
@@ -56,60 +56,60 @@ export default function Dashboard() {
       
       <main className="container mx-auto px-4 py-8">
         <div className="mb-8">
-          <h1 className="text-3xl font-bold mb-2">Bonjour Marc</h1>
-          <p className="text-muted-foreground">Voici votre situation patrimoniale</p>
+          <h1 className="text-3xl font-bold mb-2">Hello Marc</h1>
+          <p className="text-muted-foreground">Here is your wealth overview</p>
         </div>
 
         {/* Key Metrics */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
           <Card className="bg-gradient-primary text-primary-foreground shadow-elegant">
             <CardHeader className="pb-3">
-              <CardDescription className="text-primary-foreground/80">Patrimoine Total</CardDescription>
-              <CardTitle className="text-3xl">{totalWealth.toLocaleString('fr-FR')} €</CardTitle>
+              <CardDescription className="text-primary-foreground/80">Total Wealth</CardDescription>
+              <CardTitle className="text-3xl">{totalWealth.toLocaleString('en-US')} €</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="flex items-center text-sm">
                 <TrendingUp className="mr-1 h-4 w-4" />
-                +{averageChange.toFixed(1)}% ce mois
+                +{averageChange.toFixed(1)}% this month
               </div>
             </CardContent>
           </Card>
 
           <Card className="shadow-card">
             <CardHeader className="pb-3">
-              <CardDescription>Performance Annuelle</CardDescription>
+              <CardDescription>Annual Performance</CardDescription>
               <CardTitle className="text-3xl text-primary">+12.4%</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="flex items-center text-sm text-muted-foreground">
                 <ArrowUpRight className="mr-1 h-4 w-4" />
-                +48 320 € cette année
+                +48,320 € this year
               </div>
             </CardContent>
           </Card>
 
           <Card className="shadow-card">
             <CardHeader className="pb-3">
-              <CardDescription>Rendement Mensuel</CardDescription>
+              <CardDescription>Monthly Return</CardDescription>
               <CardTitle className="text-3xl">+3.2%</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="flex items-center text-sm text-muted-foreground">
                 <TrendingUp className="mr-1 h-4 w-4" />
-                +13 824 € ce mois
+                +13,824 € this month
               </div>
             </CardContent>
           </Card>
 
           <Card className="shadow-card">
             <CardHeader className="pb-3">
-              <CardDescription>Comptes Actifs</CardDescription>
+              <CardDescription>Active Accounts</CardDescription>
               <CardTitle className="text-3xl">{accounts.length}</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="flex items-center text-sm text-muted-foreground">
                 <Wallet className="mr-1 h-4 w-4" />
-                Tous positifs
+                All positive
               </div>
             </CardContent>
           </Card>
@@ -119,8 +119,8 @@ export default function Dashboard() {
           {/* Portfolio Evolution */}
           <Card className="shadow-card">
             <CardHeader>
-              <CardTitle>Évolution du Patrimoine</CardTitle>
-              <CardDescription>12 derniers mois</CardDescription>
+              <CardTitle>Wealth Evolution</CardTitle>
+              <CardDescription>Last 12 months</CardDescription>
             </CardHeader>
             <CardContent>
               <ResponsiveContainer width="100%" height={300}>
@@ -156,8 +156,8 @@ export default function Dashboard() {
           {/* Asset Allocation */}
           <Card className="shadow-card">
             <CardHeader>
-              <CardTitle>Répartition des Actifs</CardTitle>
-              <CardDescription>Allocation actuelle du portefeuille</CardDescription>
+              <CardTitle>Asset Allocation</CardTitle>
+              <CardDescription>Current portfolio allocation</CardDescription>
             </CardHeader>
             <CardContent>
               <ResponsiveContainer width="100%" height={300}>
@@ -202,8 +202,8 @@ export default function Dashboard() {
         {/* Accounts List */}
         <Card className="shadow-card">
           <CardHeader>
-            <CardTitle>Mes Comptes</CardTitle>
-            <CardDescription>Vue détaillée de vos différents comptes</CardDescription>
+            <CardTitle>My Accounts</CardTitle>
+            <CardDescription>Detailed view of your different accounts</CardDescription>
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
