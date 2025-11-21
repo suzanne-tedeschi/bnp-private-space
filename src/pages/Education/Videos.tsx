@@ -7,6 +7,8 @@ import { Play, Clock, ChevronUp, ChevronDown } from "lucide-react";
 import { useState, useEffect } from "react";
 import { generateVideoThumbnail } from "@/utils/videoThumbnail";
 import { Button } from "@/components/ui/button";
+import { useChatContext } from "@/contexts/ChatContext";
+import { cn } from "@/lib/utils";
 
 const videoCategories = {
   introduction: [
@@ -215,6 +217,7 @@ const videoCategories = {
 const Videos = () => {
   const [selectedVideo, setSelectedVideo] = useState<{ id: number; title: string; videoUrl?: string } | null>(null);
   const [videoThumbnails, setVideoThumbnails] = useState<Record<number, string>>({});
+  const { isChatOpen } = useChatContext();
 
   // Demo navigation order: sport (5) -> PEA (1) -> ETF (2)
   const demoVideoOrder = [5, 1, 2];
@@ -350,7 +353,10 @@ const Videos = () => {
 
       <Dialog open={!!selectedVideo} onOpenChange={() => setSelectedVideo(null)} modal={false}>
         <DialogContent 
-          className="max-w-xs p-0 gap-0 border-0"
+          className={cn(
+            "max-w-xs p-0 gap-0 border-0 transition-all duration-300",
+            isChatOpen && "translate-x-[-12rem]"
+          )}
         >
           <div className="relative">
             {selectedVideo?.videoUrl ? (
