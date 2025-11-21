@@ -10,9 +10,9 @@ const recommendations = [
   {
     id: "art",
     sector: "Art",
-    title: "Collection d'Art Contemporain",
-    description: "Investissement dans l'art émergent et les artistes prometteurs",
-    risk: "Moyen",
+    title: "Contemporary Art Collection",
+    description: "Investment in emerging art and promising artists",
+    risk: "Medium",
     expectedReturn: "8-15%",
     minimumInvestment: 25000,
     videoCategory: "art",
@@ -20,10 +20,10 @@ const recommendations = [
   },
   {
     id: "immobilier",
-    sector: "Immobilier",
-    title: "SCPI Haut Rendement",
-    description: "Pierre papier avec diversification européenne",
-    risk: "Faible",
+    sector: "Real Estate",
+    title: "High Yield SCPI",
+    description: "Paper stone with European diversification",
+    risk: "Low",
     expectedReturn: "4-6%",
     minimumInvestment: 15000,
     videoCategory: "immobilier",
@@ -49,9 +49,9 @@ export const RecommendationDetailDialog = ({ open, onOpenChange, recommendation 
           <div className="flex items-center justify-between">
             <Badge className="bg-primary text-lg px-4 py-1">{recommendation.sector}</Badge>
             <Badge variant="outline" className="text-sm">
-              {recommendation.risk === "Faible" && "🟢"}
-              {recommendation.risk === "Moyen" && "🟡"}
-              {recommendation.risk === "Élevé" && "🔴"}
+              {recommendation.risk === "Low" && "🟢"}
+              {recommendation.risk === "Medium" && "🟡"}
+              {recommendation.risk === "High" && "🔴"}
               {" "}{recommendation.risk}
             </Badge>
           </div>
@@ -63,21 +63,21 @@ export const RecommendationDetailDialog = ({ open, onOpenChange, recommendation 
 
         <div className="grid grid-cols-2 gap-4 py-4">
           <div className="bg-muted/50 rounded-lg p-4 space-y-1">
-            <p className="text-sm text-muted-foreground">Rendement attendu</p>
+            <p className="text-sm text-muted-foreground">Expected return</p>
             <div className="flex items-center gap-2">
               <TrendingUp className="h-5 w-5 text-primary" />
               <p className="text-xl font-bold">{recommendation.expectedReturn}</p>
             </div>
           </div>
           <div className="bg-muted/50 rounded-lg p-4 space-y-1">
-            <p className="text-sm text-muted-foreground">Investissement minimum</p>
-            <p className="text-xl font-bold">{recommendation.minimumInvestment.toLocaleString('fr-FR')} €</p>
+            <p className="text-sm text-muted-foreground">Minimum investment</p>
+            <p className="text-xl font-bold">{recommendation.minimumInvestment.toLocaleString('en-US')} €</p>
           </div>
         </div>
 
         <div className="space-y-3 pt-2">
           <p className="text-sm font-medium text-muted-foreground">
-            Pour en savoir plus sur ce secteur :
+            To learn more about this sector:
           </p>
           
           <button
@@ -92,9 +92,9 @@ export const RecommendationDetailDialog = ({ open, onOpenChange, recommendation 
                 <Video className="h-7 w-7 text-primary" />
               </div>
               <div className="flex-1 text-left">
-                <p className="font-semibold text-lg mb-1">Vidéos Éducatives</p>
+                <p className="font-semibold text-lg mb-1">Educational Videos</p>
                 <p className="text-sm text-muted-foreground">
-                  Découvrez des contenus pour comprendre ce secteur
+                  Discover content to understand this sector
                 </p>
               </div>
               <div className="text-primary opacity-0 group-hover:opacity-100 transition-opacity">
@@ -171,15 +171,15 @@ export const RecommendationsList = ({ onSelectRecommendation, onOpenDetail }: Re
                 <Badge variant="outline">{rec.risk}</Badge>
               </div>
               <div>
-                <p className="text-muted-foreground mb-1">Rendement attendu</p>
+                <p className="text-muted-foreground mb-1">Expected return</p>
                 <p className="font-semibold flex items-center">
                   <TrendingUp className="h-4 w-4 mr-1 text-primary" />
                   {rec.expectedReturn}
                 </p>
               </div>
               <div>
-                <p className="text-muted-foreground mb-1">Investissement min.</p>
-                <p className="font-semibold">{rec.minimumInvestment.toLocaleString('fr-FR')} €</p>
+                <p className="text-muted-foreground mb-1">Min. investment</p>
+                <p className="font-semibold">{rec.minimumInvestment.toLocaleString('en-US')} €</p>
               </div>
             </div>
           </CardContent>

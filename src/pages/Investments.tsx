@@ -31,7 +31,7 @@ const investments = [
   },
   {
     id: 3,
-    name: "Immobilier",
+    name: "Real Estate",
     value: 68200,
     performance: 4.92,
     data: [
@@ -41,7 +41,7 @@ const investments = [
   },
   {
     id: 4,
-    name: "Obligations",
+    name: "Bonds",
     value: 52800,
     performance: 5.6,
     data: [
