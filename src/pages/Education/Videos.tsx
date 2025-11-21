@@ -3,7 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
-import { Play, Clock, ChevronLeft, ChevronRight } from "lucide-react";
+import { Play, Clock, ChevronUp, ChevronDown } from "lucide-react";
 import { useState, useEffect } from "react";
 import { generateVideoThumbnail } from "@/utils/videoThumbnail";
 import { Button } from "@/components/ui/button";
@@ -368,14 +368,14 @@ const Videos = () => {
           
           {/* Navigation arrows - only show for demo videos */}
           {selectedVideo && demoVideoOrder.includes(selectedVideo.id) && (
-            <div className="flex justify-between items-center mt-4 gap-4">
+            <div className="flex flex-col items-center gap-3 mt-4">
               <Button
                 variant="outline"
                 size="icon"
                 onClick={() => navigateVideo('prev')}
                 className="hover-scale"
               >
-                <ChevronLeft className="h-5 w-5" />
+                <ChevronUp className="h-5 w-5" />
               </Button>
               <span className="text-sm text-muted-foreground">
                 {demoVideoOrder.indexOf(selectedVideo.id) + 1} / {demoVideoOrder.length}
@@ -386,7 +386,7 @@ const Videos = () => {
                 onClick={() => navigateVideo('next')}
                 className="hover-scale"
               >
-                <ChevronRight className="h-5 w-5" />
+                <ChevronDown className="h-5 w-5" />
               </Button>
             </div>
           )}
