@@ -19,7 +19,7 @@ const videoCategories = {
     },
     {
       id: 2,
-      title: "Comprendre le risque et le rendement",
+      title: "Comment investir dans un ETF Monde",
       duration: "2:45",
       views: "9.8k",
       videoUrl: "/videos/introduction-2.mp4",
