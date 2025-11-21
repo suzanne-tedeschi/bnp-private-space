@@ -350,9 +350,7 @@ const Videos = () => {
 
       <Dialog open={!!selectedVideo} onOpenChange={() => setSelectedVideo(null)} modal={false}>
         <DialogContent 
-          className="max-w-sm p-0 gap-0 border-0"
-          onInteractOutside={(e) => e.preventDefault()}
-          onEscapeKeyDown={(e) => e.preventDefault()}
+          className="max-w-xs p-0 gap-0 border-0"
         >
           <div className="relative">
             {selectedVideo?.videoUrl ? (
