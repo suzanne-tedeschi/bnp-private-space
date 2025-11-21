@@ -61,7 +61,7 @@ const myAdvisors = [
     rating: 4.8,
     languages: ["French", "English", "German"],
     avatar: advisorMarc,
-    description: "Spécialiste des marchés émergents et de la diversification géographique.",
+    description: "Specialist in emerging markets and geographical diversification.",
     certifications: ["CFA"],
     isMainAdvisor: false,
   },
@@ -72,402 +72,402 @@ const specialistExperts = [
   {
     id: 8,
     name: "Nathalie Bernard",
-    title: "Experte Fiscalité",
+    title: "Tax Expert",
     specialty: "Allocation",
-    experience: "16 ans",
+    experience: "16 years",
     rating: 4.9,
-    languages: ["Français", "Anglais"],
+    languages: ["French", "English"],
     avatar: expertNathalie,
-    description: "Conseillère en optimisation fiscale et structuration patrimoniale.",
-    certifications: ["Expert-Comptable", "Avocat Fiscaliste"],
-    domains: ["Fiscalité", "Transmission", "Holding"],
+    description: "Advisor in tax optimization and wealth structuring.",
+    certifications: ["Certified Public Accountant", "Tax Lawyer"],
+    domains: ["Taxation", "Estate Transfer", "Holding Companies"],
   },
   {
     id: 9,
     name: "Philippe Girard",
-    title: "Expert Allocation d'Actifs",
+    title: "Asset Allocation Expert",
     specialty: "Allocation",
-    experience: "22 ans",
+    experience: "22 years",
     rating: 4.9,
-    languages: ["Français", "Anglais"],
+    languages: ["French", "English"],
     avatar: expertAllocation1,
-    description: "Spécialiste de l'allocation stratégique et tactique pour portefeuilles diversifiés.",
+    description: "Specialist in strategic and tactical allocation for diversified portfolios.",
     certifications: ["CFA", "CIPM"],
-    domains: ["Allocation Stratégique", "Multi-Actifs", "Risk Management"],
+    domains: ["Strategic Allocation", "Multi-Asset", "Risk Management"],
   },
   {
     id: 10,
     name: "Isabelle Moreau",
-    title: "Experte Gestion de Patrimoine",
+    title: "Wealth Management Expert",
     specialty: "Allocation",
-    experience: "14 ans",
+    experience: "14 years",
     rating: 4.8,
-    languages: ["Français", "Anglais", "Italien"],
+    languages: ["French", "English", "Italian"],
     avatar: expertAllocation2,
-    description: "Conseillère patrimoniale spécialisée dans l'optimisation globale de patrimoine.",
+    description: "Wealth advisor specialized in global wealth optimization.",
     certifications: ["CFP", "CGPC"],
-    domains: ["Patrimoine Global", "Optimisation Fiscale", "Transmission"],
+    domains: ["Global Wealth", "Tax Optimization", "Estate Transfer"],
   },
   {
     id: 11,
     name: "Alexandre Petit",
-    title: "Stratégiste d'Investissement",
+    title: "Investment Strategist",
     specialty: "Allocation",
-    experience: "11 ans",
+    experience: "11 years",
     rating: 4.7,
-    languages: ["Français", "Anglais"],
+    languages: ["French", "English"],
     avatar: expertAllocation3,
-    description: "Expert en stratégies d'investissement et allocation dynamique de portefeuille.",
+    description: "Expert in investment strategies and dynamic portfolio allocation.",
     certifications: ["CFA", "FRM"],
-    domains: ["Stratégie Macro", "Asset Allocation", "Gestion Active"],
+    domains: ["Macro Strategy", "Asset Allocation", "Active Management"],
   },
   {
     id: 12,
     name: "Catherine Leroy",
-    title: "Experte Gestion de Portefeuille",
+    title: "Portfolio Management Expert",
     specialty: "Allocation",
-    experience: "19 ans",
+    experience: "19 years",
     rating: 4.9,
-    languages: ["Français", "Anglais"],
+    languages: ["French", "English"],
     avatar: expertAllocation4,
-    description: "Gestionnaire de portefeuille senior spécialisée en allocation équilibrée.",
+    description: "Senior portfolio manager specialized in balanced allocation.",
     certifications: ["CFA", "CAIA"],
-    domains: ["Gestion Discrétionnaire", "Diversification", "Performance"],
+    domains: ["Discretionary Management", "Diversification", "Performance"],
   },
 
   // Alternatif Experts
   {
     id: 3,
     name: "Pierre Leblanc",
-    title: "Expert Private Equity",
-    specialty: "Alternatif",
-    experience: "18 ans",
+    title: "Private Equity Expert",
+    specialty: "Alternative",
+    experience: "18 years",
     rating: 5.0,
-    languages: ["Français", "Anglais"],
+    languages: ["French", "English"],
     avatar: expertPierre,
-    description: "Spécialiste du capital-investissement et des actifs alternatifs pour clients fortunés.",
+    description: "Specialist in private equity and alternative assets for high-net-worth clients.",
     certifications: ["CAIA", "CFA"],
     domains: ["Private Equity", "Venture Capital", "Infrastructure"],
   },
   {
     id: 13,
     name: "Julien Fontaine",
-    title: "Expert Hedge Funds",
-    specialty: "Alternatif",
-    experience: "15 ans",
+    title: "Hedge Funds Expert",
+    specialty: "Alternative",
+    experience: "15 years",
     rating: 4.8,
-    languages: ["Français", "Anglais"],
+    languages: ["French", "English"],
     avatar: expertAlternatif1,
-    description: "Spécialiste des hedge funds et stratégies alternatives sophistiquées.",
+    description: "Specialist in hedge funds and sophisticated alternative strategies.",
     certifications: ["CAIA", "CFA"],
     domains: ["Hedge Funds", "Long/Short Equity", "Global Macro"],
   },
   {
     id: 14,
     name: "Sophie Dumas",
-    title: "Experte Venture Capital",
-    specialty: "Alternatif",
-    experience: "9 ans",
+    title: "Venture Capital Expert",
+    specialty: "Alternative",
+    experience: "9 years",
     rating: 4.7,
-    languages: ["Français", "Anglais"],
+    languages: ["French", "English"],
     avatar: expertAlternatif2,
-    description: "Spécialiste du capital-risque et investissements dans les startups innovantes.",
+    description: "Specialist in venture capital and investments in innovative startups.",
     certifications: ["CAIA", "MBA"],
     domains: ["Venture Capital", "Tech Startups", "Growth Equity"],
   },
   {
     id: 15,
     name: "Michel Blanchard",
-    title: "Expert Matières Premières",
-    specialty: "Alternatif",
-    experience: "21 ans",
+    title: "Commodities Expert",
+    specialty: "Alternative",
+    experience: "21 years",
     rating: 4.8,
-    languages: ["Français"],
+    languages: ["French"],
     avatar: expertAlternatif3,
-    description: "Conseiller spécialisé dans les investissements en commodités et métaux précieux.",
+    description: "Advisor specialized in commodities and precious metals investments.",
     certifications: ["CAIA", "Expert Commodities"],
-    domains: ["Or & Argent", "Pétrole & Gaz", "Agriculture"],
+    domains: ["Gold & Silver", "Oil & Gas", "Agriculture"],
   },
   {
     id: 16,
     name: "Valérie Chevalier",
-    title: "Experte Infrastructures",
-    specialty: "Alternatif",
-    experience: "13 ans",
+    title: "Infrastructure Expert",
+    specialty: "Alternative",
+    experience: "13 years",
     rating: 4.9,
-    languages: ["Français", "Anglais"],
+    languages: ["French", "English"],
     avatar: expertAlternatif4,
-    description: "Spécialiste des investissements en infrastructures et actifs réels.",
+    description: "Specialist in infrastructure and real assets investments.",
     certifications: ["CAIA", "Infrastructure Specialist"],
-    domains: ["Infrastructure", "Énergie", "Transport"],
+    domains: ["Infrastructure", "Energy", "Transport"],
   },
 
   // ESG Experts
   {
     id: 4,
     name: "Claire Martin",
-    title: "Experte ESG & Impact",
+    title: "ESG & Impact Expert",
     specialty: "ESG",
-    experience: "12 ans",
+    experience: "12 years",
     rating: 4.9,
-    languages: ["Français", "Anglais", "Espagnol"],
+    languages: ["French", "English", "Spanish"],
     avatar: expertClaire,
-    description: "Conseillère en investissement durable et finance à impact social.",
+    description: "Advisor in sustainable investment and social impact finance.",
     certifications: ["CFA ESG", "FSA"],
     domains: ["ESG", "Impact Investing", "Green Bonds"],
   },
   {
     id: 17,
     name: "Olivier Renaud",
-    title: "Expert Finance Durable",
+    title: "Sustainable Finance Expert",
     specialty: "ESG",
-    experience: "14 ans",
+    experience: "14 years",
     rating: 4.8,
-    languages: ["Français", "Anglais"],
+    languages: ["French", "English"],
     avatar: expertEsg1,
-    description: "Spécialiste de la finance durable et des critères environnementaux.",
+    description: "Specialist in sustainable finance and environmental criteria.",
     certifications: ["CFA ESG", "Sustainability Expert"],
-    domains: ["Finance Verte", "Climat", "Biodiversité"],
+    domains: ["Green Finance", "Climate", "Biodiversity"],
   },
   {
     id: 18,
     name: "Marie Lacroix",
-    title: "Experte Impact Social",
+    title: "Social Impact Expert",
     specialty: "ESG",
-    experience: "10 ans",
+    experience: "10 years",
     rating: 4.9,
-    languages: ["Français", "Anglais"],
+    languages: ["French", "English"],
     avatar: expertEsg2,
-    description: "Conseillère en investissement à impact social et microfinance.",
+    description: "Advisor in social impact investing and microfinance.",
     certifications: ["Impact Investing Certified", "FSA"],
-    domains: ["Impact Social", "Microfinance", "Économie Sociale"],
+    domains: ["Social Impact", "Microfinance", "Social Economy"],
   },
   {
     id: 19,
     name: "François Bertrand",
-    title: "Expert Obligations Vertes",
+    title: "Green Bonds Expert",
     specialty: "ESG",
-    experience: "17 ans",
+    experience: "17 years",
     rating: 4.7,
-    languages: ["Français", "Anglais"],
+    languages: ["French", "English"],
     avatar: expertEsg3,
-    description: "Spécialiste des green bonds et financements durables.",
+    description: "Specialist in green bonds and sustainable financing.",
     certifications: ["CFA", "Green Bond Expert"],
     domains: ["Green Bonds", "Social Bonds", "Sustainability Bonds"],
   },
   {
     id: 20,
     name: "Léa Bonnet",
-    title: "Experte Transition Énergétique",
+    title: "Energy Transition Expert",
     specialty: "ESG",
-    experience: "8 ans",
+    experience: "8 years",
     rating: 4.8,
-    languages: ["Français", "Anglais"],
+    languages: ["French", "English"],
     avatar: expertEsg4,
-    description: "Conseillère en investissements liés à la transition énergétique.",
+    description: "Advisor in energy transition investments.",
     certifications: ["ESG Analyst", "Energy Transition Specialist"],
-    domains: ["Énergies Renouvelables", "Efficacité Énergétique", "Décarbonation"],
+    domains: ["Renewable Energy", "Energy Efficiency", "Decarbonization"],
   },
 
   // Immobilier Experts
   {
     id: 5,
     name: "Thomas Rousseau",
-    title: "Expert Immobilier",
-    specialty: "Immobilier",
-    experience: "20 ans",
+    title: "Real Estate Expert",
+    specialty: "Real Estate",
+    experience: "20 years",
     rating: 4.8,
-    languages: ["Français"],
+    languages: ["French"],
     avatar: expertThomas,
-    description: "Spécialiste de l'immobilier d'investissement et des SCPI premium.",
-    certifications: ["MRICS", "Expert Immobilier"],
-    domains: ["Immobilier", "SCPI", "OPCI"],
+    description: "Specialist in investment real estate and premium REITs.",
+    certifications: ["MRICS", "Real Estate Expert"],
+    domains: ["Real Estate", "REITs", "Real Estate Funds"],
   },
   {
     id: 21,
     name: "David Carpentier",
-    title: "Expert Immobilier Commercial",
-    specialty: "Immobilier",
-    experience: "16 ans",
+    title: "Commercial Real Estate Expert",
+    specialty: "Real Estate",
+    experience: "16 years",
     rating: 4.9,
-    languages: ["Français", "Anglais"],
+    languages: ["French", "English"],
     avatar: expertImmobilier1,
-    description: "Spécialiste de l'immobilier commercial et bureaux premium.",
+    description: "Specialist in commercial real estate and premium offices.",
     certifications: ["MRICS", "CCIM"],
-    domains: ["Bureaux", "Commerce", "Logistique"],
+    domains: ["Offices", "Retail", "Logistics"],
   },
   {
     id: 22,
     name: "Pauline Gauthier",
-    title: "Experte Immobilier Résidentiel",
-    specialty: "Immobilier",
-    experience: "11 ans",
+    title: "Residential Real Estate Expert",
+    specialty: "Real Estate",
+    experience: "11 years",
     rating: 4.7,
-    languages: ["Français", "Anglais"],
+    languages: ["French", "English"],
     avatar: expertImmobilier2,
-    description: "Conseillère en immobilier résidentiel haut de gamme et défiscalisation.",
-    certifications: ["Expert Immobilier", "CIF"],
-    domains: ["Résidentiel Haut de Gamme", "Loi Pinel", "Défiscalisation"],
+    description: "Advisor in luxury residential real estate and tax optimization.",
+    certifications: ["Real Estate Expert", "CIF"],
+    domains: ["Luxury Residential", "Tax Benefits", "Tax Optimization"],
   },
   {
     id: 23,
     name: "Henri Marchand",
-    title: "Expert SCPI",
-    specialty: "Immobilier",
-    experience: "24 ans",
+    title: "REITs Expert",
+    specialty: "Real Estate",
+    experience: "24 years",
     rating: 4.9,
-    languages: ["Français"],
+    languages: ["French"],
     avatar: expertImmobilier3,
-    description: "Spécialiste des SCPI et pierre-papier avec 24 ans d'expérience.",
-    certifications: ["MRICS", "Expert SCPI"],
-    domains: ["SCPI", "OPCI", "SCI"],
+    description: "Specialist in REITs and real estate funds with 24 years of experience.",
+    certifications: ["MRICS", "REITs Expert"],
+    domains: ["REITs", "Real Estate Funds", "Investment Companies"],
   },
   {
     id: 24,
     name: "Caroline Dupuis",
-    title: "Experte Immobilier International",
-    specialty: "Immobilier",
-    experience: "13 ans",
+    title: "International Real Estate Expert",
+    specialty: "Real Estate",
+    experience: "13 years",
     rating: 4.8,
-    languages: ["Français", "Anglais", "Espagnol"],
+    languages: ["French", "English", "Spanish"],
     avatar: expertImmobilier4,
-    description: "Conseillère en immobilier international et diversification géographique.",
+    description: "Advisor in international real estate and geographic diversification.",
     certifications: ["MRICS International", "CRE"],
-    domains: ["Immobilier Europe", "USA", "Asie-Pacifique"],
+    domains: ["European Real Estate", "USA", "Asia-Pacific"],
   },
 
   // Crypto Experts
   {
     id: 6,
     name: "Émilie Dubois",
-    title: "Experte Cryptoactifs",
+    title: "Crypto Assets Expert",
     specialty: "Crypto",
-    experience: "8 ans",
+    experience: "8 years",
     rating: 4.7,
-    languages: ["Français", "Anglais"],
+    languages: ["French", "English"],
     avatar: expertEmilie,
-    description: "Conseillère spécialisée en actifs numériques et blockchain pour patrimoine.",
+    description: "Advisor specialized in digital assets and blockchain for wealth management.",
     certifications: ["CBFA", "Blockchain Expert"],
-    domains: ["Cryptomonnaies", "DeFi", "NFTs"],
+    domains: ["Cryptocurrencies", "DeFi", "NFTs"],
   },
   {
     id: 25,
     name: "Lucas Tessier",
-    title: "Expert Blockchain",
+    title: "Blockchain Expert",
     specialty: "Crypto",
-    experience: "7 ans",
+    experience: "7 years",
     rating: 4.8,
-    languages: ["Français", "Anglais"],
+    languages: ["French", "English"],
     avatar: expertCrypto1,
-    description: "Développeur et conseiller blockchain spécialisé en tokenisation.",
+    description: "Developer and blockchain advisor specialized in tokenization.",
     certifications: ["Blockchain Developer", "Certified Bitcoin Professional"],
-    domains: ["Blockchain", "Smart Contracts", "Tokenisation"],
+    domains: ["Blockchain", "Smart Contracts", "Tokenization"],
   },
   {
     id: 26,
     name: "Sarah Lemoine",
-    title: "Experte DeFi",
+    title: "DeFi Expert",
     specialty: "Crypto",
-    experience: "6 ans",
+    experience: "6 years",
     rating: 4.7,
-    languages: ["Français", "Anglais"],
+    languages: ["French", "English"],
     avatar: expertCrypto2,
-    description: "Spécialiste de la finance décentralisée et protocoles DeFi.",
+    description: "Specialist in decentralized finance and DeFi protocols.",
     certifications: ["DeFi Specialist", "Ethereum Expert"],
     domains: ["DeFi", "Yield Farming", "Staking"],
   },
   {
     id: 27,
     name: "Maxime Collin",
-    title: "Expert Trading Crypto",
+    title: "Crypto Trading Expert",
     specialty: "Crypto",
-    experience: "9 ans",
+    experience: "9 years",
     rating: 4.6,
-    languages: ["Français", "Anglais"],
+    languages: ["French", "English"],
     avatar: expertCrypto3,
-    description: "Trader professionnel spécialisé dans les cryptomonnaies.",
+    description: "Professional trader specialized in cryptocurrencies.",
     certifications: ["Certified Crypto Trader", "Technical Analyst"],
-    domains: ["Trading", "Analyse Technique", "Market Making"],
+    domains: ["Trading", "Technical Analysis", "Market Making"],
   },
   {
     id: 28,
     name: "Camille Navarro",
-    title: "Experte NFT & Métavers",
+    title: "NFT & Metaverse Expert",
     specialty: "Crypto",
-    experience: "5 ans",
+    experience: "5 years",
     rating: 4.8,
-    languages: ["Français", "Anglais"],
+    languages: ["French", "English"],
     avatar: expertCrypto4,
-    description: "Spécialiste des NFTs, actifs numériques et investissements dans le métavers.",
+    description: "Specialist in NFTs, digital assets and metaverse investments.",
     certifications: ["NFT Specialist", "Digital Assets Expert"],
-    domains: ["NFTs", "Métavers", "Art Numérique"],
+    domains: ["NFTs", "Metaverse", "Digital Art"],
   },
 
   // Art Experts
   {
     id: 7,
     name: "Laurent Mercier",
-    title: "Expert Art & Collection",
+    title: "Art & Collectibles Expert",
     specialty: "Art",
-    experience: "25 ans",
+    experience: "25 years",
     rating: 5.0,
-    languages: ["Français", "Anglais", "Italien"],
+    languages: ["French", "English", "Italian"],
     avatar: expertLaurent,
-    description: "Spécialiste des investissements dans l'art, le vin et les objets de collection.",
-    certifications: ["Expert Christie's", "CAA"],
-    domains: ["Art Contemporain", "Vins & Spiritueux", "Montres"],
+    description: "Specialist in art, wine and collectibles investments.",
+    certifications: ["Christie's Expert", "CAA"],
+    domains: ["Contemporary Art", "Wine & Spirits", "Watches"],
   },
   {
     id: 29,
     name: "Hélène Maréchal",
-    title: "Experte Art Contemporain",
+    title: "Contemporary Art Expert",
     specialty: "Art",
-    experience: "18 ans",
+    experience: "18 years",
     rating: 4.9,
-    languages: ["Français", "Anglais"],
+    languages: ["French", "English"],
     avatar: expertArt1,
-    description: "Curatrice et conseillère en art contemporain et investissement artistique.",
-    certifications: ["Expert Sotheby's", "Art Advisor"],
-    domains: ["Art Contemporain", "Sculptures", "Photographie"],
+    description: "Curator and advisor in contemporary art and artistic investment.",
+    certifications: ["Sotheby's Expert", "Art Advisor"],
+    domains: ["Contemporary Art", "Sculptures", "Photography"],
   },
   {
     id: 30,
     name: "Antoine Giraud",
-    title: "Expert Vins & Spiritueux",
+    title: "Wine & Spirits Expert",
     specialty: "Art",
-    experience: "22 ans",
+    experience: "22 years",
     rating: 4.8,
-    languages: ["Français", "Anglais", "Italien"],
+    languages: ["French", "English", "Italian"],
     avatar: expertArt2,
-    description: "Sommelier expert et conseiller en investissement vins et spiritueux rares.",
+    description: "Master sommelier and advisor in rare wine and spirits investment.",
     certifications: ["Master Sommelier", "Wine Investment Specialist"],
-    domains: ["Grands Crus", "Champagnes", "Whiskies Rares"],
+    domains: ["Grand Crus", "Champagnes", "Rare Whiskies"],
   },
   {
     id: 31,
     name: "Élise Vigneron",
-    title: "Experte Montres de Luxe",
+    title: "Luxury Watches Expert",
     specialty: "Art",
-    experience: "12 ans",
+    experience: "12 years",
     rating: 4.9,
-    languages: ["Français", "Anglais", "Suisse Allemand"],
+    languages: ["French", "English", "Swiss German"],
     avatar: expertArt3,
-    description: "Spécialiste horlogerie de luxe et montres de collection.",
-    certifications: ["Horloger Expert", "Watch Appraiser"],
-    domains: ["Patek Philippe", "Rolex", "Montres Vintage"],
+    description: "Specialist in luxury watches and collectible timepieces.",
+    certifications: ["Expert Watchmaker", "Watch Appraiser"],
+    domains: ["Patek Philippe", "Rolex", "Vintage Watches"],
   },
   {
     id: 32,
     name: "Robert Aubert",
-    title: "Expert Voitures de Collection",
+    title: "Classic Cars Expert",
     specialty: "Art",
-    experience: "28 ans",
+    experience: "28 years",
     rating: 5.0,
-    languages: ["Français", "Anglais", "Italien"],
+    languages: ["French", "English", "Italian"],
     avatar: expertArt4,
-    description: "Expert en automobiles de collection et voitures d'exception.",
+    description: "Expert in collectible automobiles and exceptional cars.",
     certifications: ["Classic Car Expert", "RM Sotheby's Specialist"],
-    domains: ["Ferrari", "Porsche", "Voitures Classiques"],
+    domains: ["Ferrari", "Porsche", "Classic Cars"],
   },
 ];
 
@@ -524,7 +524,7 @@ export default function PremiumExpertise() {
                             <span className="font-semibold">{advisor.rating}</span>
                           </div>
                           <span className="text-muted-foreground">•</span>
-                          <span className="text-sm text-muted-foreground">{advisor.experience} d'expérience</span>
+                          <span className="text-sm text-muted-foreground">{advisor.experience} of experience</span>
                         </div>
 
                         <div className="flex flex-wrap gap-2 mb-3">
@@ -551,7 +551,7 @@ export default function PremiumExpertise() {
                         <div className="flex space-x-2">
                           <Button className="flex-1">
                             <Calendar className="h-4 w-4 mr-2" />
-                            Prendre RDV
+                            Book Appointment
                           </Button>
                           <Button variant="outline" className="flex-1">
                             <MessageSquare className="h-4 w-4 mr-2" />
@@ -580,7 +580,7 @@ export default function PremiumExpertise() {
                 <TabsTrigger value="allocation">Allocation</TabsTrigger>
                 <TabsTrigger value="alternatif">Alternative</TabsTrigger>
                 <TabsTrigger value="esg">ESG</TabsTrigger>
-                <TabsTrigger value="immobilier">Immobilier</TabsTrigger>
+                <TabsTrigger value="immobilier">Real Estate</TabsTrigger>
                 <TabsTrigger value="crypto">Crypto</TabsTrigger>
                 <TabsTrigger value="art">Art</TabsTrigger>
               </TabsList>
@@ -643,10 +643,10 @@ export default function PremiumExpertise() {
                           <div className="flex flex-col sm:flex-row gap-2">
                             <Button>
                               <Calendar className="h-4 w-4 mr-2" />
-                              Réserver une consultation
+                              Book a consultation
                             </Button>
                             <Button variant="outline">
-                              Voir le profil complet
+                              View full profile
                             </Button>
                           </div>
                         </div>
@@ -669,7 +669,7 @@ export default function PremiumExpertise() {
                           <h3 className="text-lg font-semibold">{expert.name}</h3>
                           <p className="text-sm text-muted-foreground mb-2">{expert.title}</p>
                           <p className="text-sm text-muted-foreground mb-3">{expert.description}</p>
-                          <Button>Consulter</Button>
+                          <Button>Consult</Button>
                         </div>
                       </div>
                     </CardContent>
@@ -690,7 +690,7 @@ export default function PremiumExpertise() {
                           <h3 className="text-lg font-semibold">{expert.name}</h3>
                           <p className="text-sm text-muted-foreground mb-2">{expert.title}</p>
                           <p className="text-sm text-muted-foreground mb-3">{expert.description}</p>
-                          <Button>Consulter</Button>
+                          <Button>Consult</Button>
                         </div>
                       </div>
                     </CardContent>
@@ -711,7 +711,7 @@ export default function PremiumExpertise() {
                           <h3 className="text-lg font-semibold">{expert.name}</h3>
                           <p className="text-sm text-muted-foreground mb-2">{expert.title}</p>
                           <p className="text-sm text-muted-foreground mb-3">{expert.description}</p>
-                          <Button>Consulter</Button>
+                          <Button>Consult</Button>
                         </div>
                       </div>
                     </CardContent>
@@ -732,7 +732,7 @@ export default function PremiumExpertise() {
                           <h3 className="text-lg font-semibold">{expert.name}</h3>
                           <p className="text-sm text-muted-foreground mb-2">{expert.title}</p>
                           <p className="text-sm text-muted-foreground mb-3">{expert.description}</p>
-                          <Button>Consulter</Button>
+                          <Button>Consult</Button>
                         </div>
                       </div>
                     </CardContent>
@@ -797,10 +797,10 @@ export default function PremiumExpertise() {
                           <div className="flex flex-col sm:flex-row gap-2">
                             <Button>
                               <Calendar className="h-4 w-4 mr-2" />
-                              Réserver une consultation
+                              Book a consultation
                             </Button>
                             <Button variant="outline">
-                              Voir le profil complet
+                              View full profile
                             </Button>
                           </div>
                         </div>
@@ -867,10 +867,10 @@ export default function PremiumExpertise() {
                           <div className="flex flex-col sm:flex-row gap-2">
                             <Button>
                               <Calendar className="h-4 w-4 mr-2" />
-                              Réserver une consultation
+                              Book a consultation
                             </Button>
                             <Button variant="outline">
-                              Voir le profil complet
+                              View full profile
                             </Button>
                           </div>
                         </div>
