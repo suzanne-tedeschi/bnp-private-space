@@ -121,7 +121,7 @@ export const ChatSidebar = ({ isOpen, setIsOpen }: ChatSidebarProps) => {
       {/* Chat Sidebar - Fixed to right side */}
       <div
         className={cn(
-          "fixed right-0 top-0 h-full bg-card border-l border-border shadow-2xl transition-transform duration-300 ease-in-out z-40 flex flex-col",
+          "fixed right-0 top-0 h-full bg-gradient-to-br from-primary/5 via-background to-primary/10 border-l border-border shadow-2xl transition-transform duration-300 ease-in-out z-40 flex flex-col",
           isOpen ? "translate-x-0 w-96" : "translate-x-full w-96"
         )}
       >
@@ -137,20 +137,20 @@ export const ChatSidebar = ({ isOpen, setIsOpen }: ChatSidebarProps) => {
         )}
 
         {/* Header */}
-        <div className="flex items-center justify-between p-4 border-b border-border bg-gradient-primary">
+        <div className="flex items-center justify-between p-4 border-b border-border/50 backdrop-blur-sm bg-background/50">
           <div className="flex items-center space-x-3">
-            <div className="relative h-10 w-10 rounded-full bg-background/20 backdrop-blur-sm flex items-center justify-center">
-              <Sparkles className="h-5 w-5 text-primary-foreground animate-pulse" />
-              <div className="absolute -top-1 -right-1 h-3 w-3 bg-accent rounded-full border-2 border-card" />
+            <div className="relative h-10 w-10 rounded-full bg-primary/20 backdrop-blur-sm flex items-center justify-center">
+              <Sparkles className="h-5 w-5 text-primary animate-pulse" />
+              <div className="absolute -top-1 -right-1 h-3 w-3 bg-accent rounded-full border-2 border-background" />
             </div>
             <div>
-              <h2 className="font-semibold text-primary-foreground flex items-center gap-2">
+              <h2 className="font-semibold text-foreground flex items-center gap-2">
                 Assistant Exploration
-                <Badge variant="secondary" className="text-xs bg-background/20 text-primary-foreground border-0">
+                <Badge variant="secondary" className="text-xs bg-primary/20 text-primary border-0">
                   IA
                 </Badge>
               </h2>
-              <p className="text-xs text-primary-foreground/80 flex items-center gap-1">
+              <p className="text-xs text-muted-foreground flex items-center gap-1">
                 <span className="h-1.5 w-1.5 rounded-full bg-accent animate-pulse" />
                 En ligne • Réponse instantanée
               </p>
@@ -255,7 +255,7 @@ export const ChatSidebar = ({ isOpen, setIsOpen }: ChatSidebarProps) => {
         </ScrollArea>
 
         {/* Input Area */}
-        <div className="p-4 border-t border-border bg-gradient-to-t from-muted/50 to-transparent">
+        <div className="p-4 border-t border-border/50 backdrop-blur-sm bg-background/50">
           <div className="relative">
             <Input
               ref={inputRef}
