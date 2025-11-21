@@ -352,15 +352,38 @@ const Videos = () => {
       </div>
 
       <Dialog open={!!selectedVideo} onOpenChange={() => setSelectedVideo(null)} modal={false}>
-        <div className={cn(
-          "fixed inset-0 bg-black/60 backdrop-blur-sm z-40 transition-opacity duration-300",
-          selectedVideo ? "opacity-100" : "opacity-0 pointer-events-none"
-        )} />
+        <div 
+          className={cn(
+            "fixed inset-0 bg-black/60 backdrop-blur-sm z-40 transition-opacity duration-300",
+            selectedVideo ? "opacity-100" : "opacity-0 pointer-events-none"
+          )}
+          onClick={(e) => {
+            // Close only if clicking outside the chat sidebar (which is at right-0 with w-96)
+            const clickX = e.clientX;
+            const windowWidth = window.innerWidth;
+            const chatWidth = 384; // w-96 = 384px
+            
+            // If chat is open and click is in the chat area, don't close
+            if (isChatOpen && clickX > windowWidth - chatWidth) {
+              return;
+            }
+            
+            // Otherwise, close the video
+            setSelectedVideo(null);
+          }}
+        />
         <DialogContent 
           className={cn(
             "max-w-xs p-0 gap-0 border border-primary/30 shadow-2xl left-1/2 -translate-x-1/2 z-50",
             isChatOpen && "!left-[calc(50%-12rem)]"
           )}
+          onInteractOutside={(e) => {
+            // Prevent closing when clicking on chat sidebar
+            const target = e.target as HTMLElement;
+            if (target.closest('[class*="fixed right-0"]')) {
+              e.preventDefault();
+            }
+          }}
         >
           <div className="relative">
             {selectedVideo?.videoUrl ? (
