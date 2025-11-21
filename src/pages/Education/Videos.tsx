@@ -216,7 +216,7 @@ const Videos = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {videoCategories.introduction.slice(0, 3).map((video) => (
               <Card key={video.id} className="shadow-card hover:shadow-lg transition-all cursor-pointer group overflow-hidden border-primary/50">
-                <div className="relative aspect-video overflow-hidden">
+                <div className="relative aspect-[9/16] overflow-hidden">
                   <img 
                     src={video.thumbnail} 
                     alt={video.title}
@@ -299,7 +299,7 @@ const VideoGrid = ({ videos, categoryName }: { videos: any[]; categoryName: stri
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {videos.map((video) => (
           <Card key={video.id} className="shadow-card hover:shadow-lg transition-all cursor-pointer group overflow-hidden">
-            <div className="relative aspect-video overflow-hidden">
+            <div className="relative aspect-[9/16] overflow-hidden">
               <img 
                 src={video.thumbnail} 
                 alt={video.title}
