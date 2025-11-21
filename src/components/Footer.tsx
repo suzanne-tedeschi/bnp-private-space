@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 export const Footer = () => {
   return (
-    <footer className="bg-gradient-to-br from-background via-primary/5 to-background border-t border-border/50 mt-16">
+    <footer className="bg-gradient-to-br from-muted/80 via-muted/60 to-muted/80 border-t border-border mt-16">
       {/* Quick Links Bar */}
-      <div className="border-b border-border/30">
+      <div className="border-b border-border/50 bg-muted/40">
         <div className="container mx-auto px-4 py-6">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             <Link 
