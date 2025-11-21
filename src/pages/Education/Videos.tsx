@@ -22,6 +22,7 @@ const videoCategories = {
       title: "Comprendre le risque et le rendement",
       duration: "2:45",
       views: "9.8k",
+      videoUrl: "/videos/introduction-2.mp4",
       thumbnail: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&q=80",
     },
     {
@@ -207,15 +208,18 @@ const Videos = () => {
   const [videoThumbnails, setVideoThumbnails] = useState<Record<number, string>>({});
 
   useEffect(() => {
-    // Generate thumbnail for the first video
-    const video = videoCategories.introduction[0];
-    if (video.videoUrl && !videoThumbnails[video.id]) {
-      generateVideoThumbnail(video.videoUrl)
-        .then(thumbnail => {
-          setVideoThumbnails(prev => ({ ...prev, [video.id]: thumbnail }));
-        })
-        .catch(err => console.error('Error generating thumbnail:', err));
-    }
+    // Generate thumbnails for videos with videoUrl
+    const videosToGenerate = videoCategories.introduction.filter(v => v.videoUrl);
+    
+    videosToGenerate.forEach(video => {
+      if (!videoThumbnails[video.id]) {
+        generateVideoThumbnail(video.videoUrl!)
+          .then(thumbnail => {
+            setVideoThumbnails(prev => ({ ...prev, [video.id]: thumbnail }));
+          })
+          .catch(err => console.error('Error generating thumbnail:', err));
+      }
+    });
   }, []);
 
   return (
