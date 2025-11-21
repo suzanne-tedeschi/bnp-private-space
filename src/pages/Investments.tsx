@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Header } from "@/components/Header";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { TrendingUp, TrendingDown, ArrowRight, Target, AlertCircle, Sparkles, Search, Filter, BookOpen } from "lucide-react";
+import { TrendingUp, TrendingDown, ArrowRight, Target, AlertCircle, Sparkles, Search, Filter, BookOpen, Radar as RadarIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Input } from "@/components/ui/input";
@@ -289,11 +289,15 @@ export default function Investments() {
         </div>
 
         <Tabs defaultValue="overview" className="space-y-6">
-          <TabsList className="grid w-full max-w-3xl grid-cols-4">
+          <TabsList className="grid w-full max-w-4xl grid-cols-5">
             <TabsTrigger value="overview">Vue d'ensemble</TabsTrigger>
             <TabsTrigger value="recommendations" className="flex items-center space-x-2">
               <Sparkles className="h-4 w-4" />
               <span>Recommandations</span>
+            </TabsTrigger>
+            <TabsTrigger value="diversification" className="flex items-center space-x-2">
+              <RadarIcon className="h-4 w-4" />
+              <span>Divertissement</span>
             </TabsTrigger>
             <TabsTrigger value="explore" className="flex items-center space-x-2">
               <Search className="h-4 w-4" />
@@ -395,73 +399,6 @@ export default function Investments() {
 
           {/* Recommandations Tab */}
           <TabsContent value="recommendations" className="space-y-6">
-            <Card className="shadow-card">
-              <CardHeader>
-                <CardTitle>Votre Diversification Actuelle</CardTitle>
-                <CardDescription>
-                  Répartition géographique et sectorielle de votre portefeuille
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ResponsiveContainer width="100%" height={400}>
-                  <RadarChart data={diversificationData}>
-                    <PolarGrid stroke="hsl(var(--border))" />
-                    <PolarAngleAxis 
-                      dataKey="category" 
-                      tick={{ fill: "hsl(var(--foreground))", fontSize: 12 }}
-                    />
-                    <PolarRadiusAxis 
-                      angle={90} 
-                      domain={[0, 100]}
-                      tick={{ fill: "hsl(var(--muted-foreground))" }}
-                    />
-                    <Radar
-                      name="Géographie"
-                      dataKey="geographie"
-                      stroke="hsl(156 100% 29%)"
-                      fill="hsl(156 100% 29%)"
-                      fillOpacity={0.3}
-                      strokeWidth={2}
-                    />
-                    <Radar
-                      name="Industrie"
-                      dataKey="industrie"
-                      stroke="hsl(75 100% 60%)"
-                      fill="hsl(75 100% 60%)"
-                      fillOpacity={0.3}
-                      strokeWidth={2}
-                    />
-                    <Tooltip
-                      contentStyle={{
-                        backgroundColor: "hsl(var(--card))",
-                        border: "1px solid hsl(var(--border))",
-                        borderRadius: "8px",
-                      }}
-                    />
-                    <Legend 
-                      wrapperStyle={{
-                        paddingTop: "20px"
-                      }}
-                    />
-                  </RadarChart>
-                </ResponsiveContainer>
-                <div className="mt-4 grid grid-cols-2 gap-4 text-sm">
-                  <div className="flex items-center space-x-2">
-                    <div className="h-3 w-3 rounded-full bg-primary" />
-                    <span className="text-muted-foreground">
-                      Géographie : Exposition par région
-                    </span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <div className="h-3 w-3 rounded-full bg-accent" />
-                    <span className="text-muted-foreground">
-                      Industrie : Exposition par secteur
-                    </span>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
             <div className="grid lg:grid-cols-3 gap-6">
               <Card className="shadow-card lg:col-span-2">
                 <CardHeader>
@@ -570,6 +507,103 @@ export default function Investments() {
                       </Button>
                     </div>
                   ))}
+                </div>
+              </CardContent>
+            </Card>
+          </TabsContent>
+
+          {/* Divertissement Tab */}
+          <TabsContent value="diversification" className="space-y-6">
+            <Card className="shadow-card bg-gradient-to-br from-primary/5 via-accent/5 to-background border-primary/20">
+              <CardHeader>
+                <div className="flex items-center justify-between">
+                  <div>
+                    <CardTitle className="text-2xl mb-2">🎯 Votre Araignée de Diversification</CardTitle>
+                    <CardDescription>
+                      Visualisez la répartition géographique et sectorielle de votre portefeuille de manière interactive
+                    </CardDescription>
+                  </div>
+                  <RadarIcon className="h-12 w-12 text-primary animate-pulse" />
+                </div>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <ResponsiveContainer width="100%" height={500}>
+                  <RadarChart data={diversificationData}>
+                    <PolarGrid stroke="hsl(var(--primary))" strokeOpacity={0.3} />
+                    <PolarAngleAxis 
+                      dataKey="category" 
+                      tick={{ fill: "hsl(var(--foreground))", fontSize: 14, fontWeight: 600 }}
+                    />
+                    <PolarRadiusAxis 
+                      angle={90} 
+                      domain={[0, 100]}
+                      tick={{ fill: "hsl(var(--muted-foreground))", fontSize: 12 }}
+                    />
+                    <Radar
+                      name="Géographie"
+                      dataKey="geographie"
+                      stroke="hsl(156 100% 29%)"
+                      fill="hsl(156 100% 29%)"
+                      fillOpacity={0.4}
+                      strokeWidth={3}
+                    />
+                    <Radar
+                      name="Industrie"
+                      dataKey="industrie"
+                      stroke="hsl(75 100% 60%)"
+                      fill="hsl(75 100% 60%)"
+                      fillOpacity={0.4}
+                      strokeWidth={3}
+                    />
+                    <Tooltip
+                      contentStyle={{
+                        backgroundColor: "hsl(var(--card))",
+                        border: "2px solid hsl(var(--primary))",
+                        borderRadius: "12px",
+                        boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+                      }}
+                    />
+                    <Legend 
+                      wrapperStyle={{
+                        paddingTop: "30px",
+                        fontSize: "14px",
+                        fontWeight: 600,
+                      }}
+                    />
+                  </RadarChart>
+                </ResponsiveContainer>
+                
+                <div className="grid md:grid-cols-2 gap-6 mt-6">
+                  <div className="p-4 rounded-lg bg-primary/10 border border-primary/30">
+                    <div className="flex items-center space-x-3 mb-3">
+                      <div className="h-4 w-4 rounded-full bg-primary" />
+                      <h3 className="font-semibold text-lg">Géographie</h3>
+                    </div>
+                    <p className="text-sm text-muted-foreground">
+                      Votre exposition par région vous permet de bénéficier de la croissance mondiale tout en limitant les risques géopolitiques.
+                    </p>
+                  </div>
+                  <div className="p-4 rounded-lg bg-accent/10 border border-accent/30">
+                    <div className="flex items-center space-x-3 mb-3">
+                      <div className="h-4 w-4 rounded-full bg-accent" />
+                      <h3 className="font-semibold text-lg">Industrie</h3>
+                    </div>
+                    <p className="text-sm text-muted-foreground">
+                      Votre diversification sectorielle optimise votre rendement en capturant les opportunités de différents domaines.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="p-6 rounded-lg bg-gradient-primary text-primary-foreground">
+                  <div className="flex items-start space-x-4">
+                    <AlertCircle className="h-6 w-6 flex-shrink-0 mt-1" />
+                    <div>
+                      <h4 className="font-semibold text-lg mb-2">💡 Le saviez-vous ?</h4>
+                      <p className="text-sm opacity-90">
+                        Une diversification équilibrée entre géographie et secteurs peut réduire votre risque de portefeuille jusqu'à 40% tout en maintenant des rendements attractifs. Plus votre araignée est équilibrée, plus votre portefeuille est résilient !
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </CardContent>
             </Card>
