@@ -313,7 +313,7 @@ const Videos = () => {
       </div>
 
       <Dialog open={!!selectedVideo} onOpenChange={() => setSelectedVideo(null)}>
-        <DialogContent className="max-w-md">
+        <DialogContent className="max-w-sm max-h-[85vh] overflow-auto">
           {selectedVideo?.videoUrl ? (
             <video 
               controls 
