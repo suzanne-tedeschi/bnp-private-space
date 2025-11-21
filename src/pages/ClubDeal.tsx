@@ -251,37 +251,80 @@ export default function ClubDeal() {
 
         {/* Premium Become a Club Maker Section */}
         <div className="relative">
-          {/* Background glow */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="w-96 h-96 bg-gradient-to-r from-amber-400/20 to-yellow-400/20 rounded-full blur-3xl" />
-          </div>
-          
-          <Card className="relative shadow-2xl border-2 border-amber-200/50 bg-gradient-to-br from-white via-amber-50/30 to-white backdrop-blur-sm overflow-hidden">
-            {/* Decorative elements */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-amber-400/10 to-transparent rounded-full blur-2xl" />
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-gradient-to-tr from-yellow-400/10 to-transparent rounded-full blur-2xl" />
+          <Card className="relative shadow-2xl border-2 border-primary/20 bg-white backdrop-blur-sm overflow-hidden">
+            {/* Subtle decorative elements */}
+            <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-primary/5 to-transparent rounded-full blur-3xl" />
             
-            <CardContent className="relative py-12 px-8 text-center space-y-6">
-              <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-amber-400 to-yellow-500 shadow-xl mb-4">
-                <Sparkles className="h-10 w-10 text-white" />
+            <CardContent className="relative py-16 px-8">
+              <div className="grid lg:grid-cols-5 gap-8 items-center">
+                {/* Left side - Main message */}
+                <div className="lg:col-span-2 space-y-6">
+                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
+                    <Sparkles className="h-4 w-4 text-primary" />
+                    <span className="text-sm font-medium text-primary">Opportunité Exclusive</span>
+                  </div>
+                  
+                  <div className="space-y-4">
+                    <h3 className="text-4xl font-bold text-foreground">
+                      Devenez Club Maker
+                    </h3>
+                    <p className="text-lg text-muted-foreground">
+                      Créez et gérez votre propre club d'investissement premium
+                    </p>
+                  </div>
+
+                  <Button 
+                    size="lg"
+                    className="bg-gradient-primary hover:opacity-90 text-lg px-8 py-6 hover:scale-105 transition-all shadow-lg w-full sm:w-auto"
+                  >
+                    Devenir Club Maker
+                    <ArrowRight className="h-5 w-5 ml-2" />
+                  </Button>
+                </div>
+
+                {/* Right side - Benefits grid */}
+                <div className="lg:col-span-3 grid sm:grid-cols-2 gap-6">
+                  <div className="space-y-3 p-6 rounded-xl bg-gradient-to-br from-primary/5 to-transparent border border-primary/10 hover:border-primary/20 transition-all">
+                    <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
+                      <Users className="h-6 w-6 text-primary" />
+                    </div>
+                    <h4 className="font-semibold text-lg">Réseau d'Élite</h4>
+                    <p className="text-sm text-muted-foreground">
+                      Connectez-vous avec des investisseurs triés sur le volet
+                    </p>
+                  </div>
+
+                  <div className="space-y-3 p-6 rounded-xl bg-gradient-to-br from-accent/5 to-transparent border border-accent/10 hover:border-accent/20 transition-all">
+                    <div className="h-12 w-12 rounded-full bg-accent/10 flex items-center justify-center">
+                      <Target className="h-6 w-6 text-accent" />
+                    </div>
+                    <h4 className="font-semibold text-lg">Opportunités Uniques</h4>
+                    <p className="text-sm text-muted-foreground">
+                      Accès prioritaire à des deals exclusifs premium
+                    </p>
+                  </div>
+
+                  <div className="space-y-3 p-6 rounded-xl bg-gradient-to-br from-primary/5 to-transparent border border-primary/10 hover:border-primary/20 transition-all">
+                    <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
+                      <TrendingUp className="h-6 w-6 text-primary" />
+                    </div>
+                    <h4 className="font-semibold text-lg">Performance</h4>
+                    <p className="text-sm text-muted-foreground">
+                      Suivez et optimisez vos investissements collectifs
+                    </p>
+                  </div>
+
+                  <div className="space-y-3 p-6 rounded-xl bg-gradient-to-br from-accent/5 to-transparent border border-accent/10 hover:border-accent/20 transition-all">
+                    <div className="h-12 w-12 rounded-full bg-accent/10 flex items-center justify-center">
+                      <Sparkles className="h-6 w-6 text-accent" />
+                    </div>
+                    <h4 className="font-semibold text-lg">Support Dédié</h4>
+                    <p className="text-sm text-muted-foreground">
+                      Accompagnement personnalisé de nos experts
+                    </p>
+                  </div>
+                </div>
               </div>
-              
-              <div className="space-y-3">
-                <h3 className="text-3xl font-bold bg-gradient-to-r from-amber-600 via-yellow-600 to-amber-600 bg-clip-text text-transparent">
-                  Devenez Club Maker
-                </h3>
-                <p className="text-muted-foreground max-w-2xl mx-auto">
-                  Créez votre propre club d'investissement exclusif et invitez des partenaires triés sur le volet
-                </p>
-              </div>
-              
-              <Button 
-                size="lg"
-                className="bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-500 hover:from-amber-600 hover:via-yellow-600 hover:to-amber-600 text-white font-bold text-lg px-12 py-7 rounded-xl shadow-2xl hover:shadow-amber-500/50 hover:scale-105 transition-all duration-300 border-2 border-amber-400"
-              >
-                <Sparkles className="h-5 w-5 mr-2" />
-                Become a Club Maker
-              </Button>
             </CardContent>
           </Card>
         </div>
