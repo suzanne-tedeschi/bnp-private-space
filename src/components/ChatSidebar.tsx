@@ -71,28 +71,12 @@ export const ChatSidebar = ({ isOpen, setIsOpen }: ChatSidebarProps) => {
     // Simulate assistant response with typing delay
     setTimeout(() => {
       setIsTyping(false);
-      const responses = [
-        {
-          content: "Excellente question ! 🎯 D'après l'analyse de votre portefeuille, je remarque que vous avez une bonne diversification géographique, mais il pourrait être intéressant d'explorer davantage les marchés émergents et les secteurs technologiques.",
-          suggestions: ["Voir les opportunités tech", "Marchés émergents", "Analyse détaillée"],
-        },
-        {
-          content: "Je peux vous aider avec ça ! 💡 Voici quelques pistes d'optimisation fiscale adaptées à votre profil d'investisseur : PEA pour les actions européennes, assurance-vie pour la transmission patrimoniale, et défiscalisation immobilière.",
-          suggestions: ["En savoir plus sur le PEA", "Simulation fiscale", "Prendre RDV conseiller"],
-        },
-        {
-          content: "Parfait ! 📚 Je vous recommande de commencer par notre section éducation où vous trouverez des articles, vidéos et podcasts adaptés à votre niveau. Vous pouvez aussi échanger avec nos experts.",
-          suggestions: ["Accéder à l'éducation", "Réserver un expert", "Voir les articles"],
-        },
-      ];
-      
-      const randomResponse = responses[Math.floor(Math.random() * responses.length)];
       const assistantMessage: Message = {
         id: messages.length + 2,
-        content: randomResponse.content,
+        content: "PEA signifie Plan d'Épargne en Actions. C'est un dispositif qui permet d'investir en actions européennes avec une fiscalité avantageuse après cinq ans. Souhaites-tu que je développe ?",
         sender: "assistant",
         timestamp: new Date(),
-        suggestions: randomResponse.suggestions,
+        suggestions: ["Oui, développe", "Voir les PEA disponibles", "Comparer avec assurance-vie"],
       };
       setMessages((prev) => [...prev, assistantMessage]);
     }, 1500);
