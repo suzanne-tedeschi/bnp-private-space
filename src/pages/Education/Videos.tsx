@@ -237,7 +237,7 @@ const Videos = () => {
         <div className="mb-8">
           <h2 className="text-2xl font-bold mb-4">Pour vous</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {videoCategories.introduction.slice(1, 4).map((video) => (
+            {videoCategories.introduction.slice(2, 5).map((video) => (
               <Card 
                 key={video.id} 
                 className="shadow-card hover:shadow-lg transition-all cursor-pointer group overflow-hidden border-primary/50"
