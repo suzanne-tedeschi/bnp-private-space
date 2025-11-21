@@ -64,54 +64,57 @@ export default function Investments() {
     <div className="min-h-screen bg-background">
       <Header />
       
-      <main className="container mx-auto px-4 py-8 space-y-8">
+      <main className="container mx-auto px-4 py-8 space-y-6">
         {/* Header */}
-        <div className="mb-8">
+        <div className="mb-6">
           <h1 className="text-3xl font-bold mb-2">Investir</h1>
           <p className="text-muted-foreground">Pilotez et optimisez votre portefeuille</p>
         </div>
 
-        {/* Section 1: Graphique combiné + Mini graphiques + Radar */}
-        <div className="grid lg:grid-cols-3 gap-6">
-          {/* Graphique combiné - Prend 2 colonnes */}
-          <div className="lg:col-span-2">
-            <CombinedChart selectedScenario={selectedRecommendation} />
-          </div>
+        {/* Section 1: Graphique combiné en pleine largeur */}
+        <CombinedChart selectedScenario={selectedRecommendation} />
 
-          {/* Colonne droite: Mini graphiques + Radar */}
-          <div className="space-y-6">
-            {/* Mini graphiques */}
-            <div className="grid grid-cols-2 gap-4">
-              {investments.map((inv) => (
-                <InvestmentMiniChart
-                  key={inv.id}
-                  name={inv.name}
-                  value={inv.value}
-                  performance={inv.performance}
-                  data={inv.data}
-                />
-              ))}
-            </div>
+        {/* Section 2: Mini graphiques des investissements en grille 4 colonnes */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+          {investments.map((inv) => (
+            <InvestmentMiniChart
+              key={inv.id}
+              name={inv.name}
+              value={inv.value}
+              performance={inv.performance}
+              data={inv.data}
+            />
+          ))}
+        </div>
 
-            {/* Radar de diversification */}
+        {/* Section 3: Radar + Bouton recommandations côte à côte */}
+        <div className="grid lg:grid-cols-5 gap-6">
+          <div className="lg:col-span-3">
             <DiversificationRadar selectedRecommendation={selectedRecommendation} />
           </div>
+          
+          <div className="lg:col-span-2 flex items-center justify-center">
+            <div className="w-full space-y-4">
+              <div className="text-center space-y-2">
+                <h3 className="text-xl font-bold">Prêt à diversifier ?</h3>
+                <p className="text-sm text-muted-foreground">
+                  Découvrez des opportunités personnalisées adaptées à votre profil
+                </p>
+              </div>
+              <Button
+                size="lg"
+                className="w-full bg-gradient-primary text-lg py-6 hover:scale-105 transition-transform"
+                onClick={() => setDialogOpen(true)}
+              >
+                <Sparkles className="h-5 w-5 mr-2" />
+                Nouvelles Opportunités
+              </Button>
+            </div>
+          </div>
         </div>
 
-        {/* Section 2: Bouton de recommandations */}
-        <div className="flex justify-center">
-          <Button
-            size="lg"
-            className="bg-gradient-primary text-lg px-8 py-6 hover:scale-105 transition-transform"
-            onClick={() => setDialogOpen(true)}
-          >
-            <Sparkles className="h-5 w-5 mr-2" />
-            Découvrir de Nouvelles Opportunités
-          </Button>
-        </div>
-
-        {/* Section 3: Wrapped Spotify style */}
-        <div className="pt-8">
+        {/* Section 4: Wrapped Spotify style */}
+        <div className="pt-4">
           <InvestmentWrapped />
         </div>
       </main>
